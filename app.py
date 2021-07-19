@@ -1,6 +1,14 @@
 from flask import Flask
 import folium
-import ee
+import folium.plugins as plugins
+import numpy as np
+import pandas as pd
+from datetime import datetime, timedelta
+from folium.plugins import FloatImage
+from folium.plugins import Draw
+from folium.plugins import MiniMap
+import folium
+from folium import plugins
 
 app = Flask(__name__)
 
