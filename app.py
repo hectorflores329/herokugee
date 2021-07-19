@@ -15,11 +15,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
-    ## Trigger the authentication flow. You only need to do this once
-    ee.Authenticate()
-
-    # Initialize the library.
-    ee.Initialize()
 
     # Add custom basemaps to folium
     basemaps = {
