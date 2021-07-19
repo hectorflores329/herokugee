@@ -62,6 +62,10 @@ def mapa():
 
     # Create a folium map object.
     m = folium.Map(location=[40.33, -99.42], zoom_start=4, height=500)
+
+    # Add custom basemaps
+    basemaps['Google Maps'].add_to(m)
+    basemaps['Google Satellite Hybrid'].add_to(m)
     
     return m._repr_html_()
     # return HeatMapWithTime(lat_long_list2,radius=5,auto_play=True,position='bottomright').add_to(map)
