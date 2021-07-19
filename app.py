@@ -1,4 +1,4 @@
-import ee
+from ee import Ee
 from flask import Flask
 import folium
 import folium.plugins as plugins
