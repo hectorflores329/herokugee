@@ -6,16 +6,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
-    ## Trigger the authentication flow. You only need to do this once
-    ee.Authenticate()
-
-    # Initialize the library.
-    ee.Initialize()
-
-    dem = ee.Image('USGS/SRTMGL1_003')
-    xy = ee.Geometry.Point([86.9250, 27.9881])
-    elev = dem.sample(xy, 30).first().get('elevation').getInfo()
-    print('Mount Everest elevation (m):', elev)
 
     # Add custom basemaps to folium
     basemaps = {
