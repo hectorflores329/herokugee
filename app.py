@@ -3,6 +3,7 @@ import folium
 import folium.plugins as plugins
 import numpy as np
 import pandas as pd
+import ee
 from datetime import datetime, timedelta
 from folium.plugins import FloatImage
 from folium.plugins import Draw
@@ -14,6 +15,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
+    ## Trigger the authentication flow. You only need to do this once
+    ee.Authenticate()
+
+    # Initialize the library.
+    ee.Initialize()
 
     # Add custom basemaps to folium
     basemaps = {
