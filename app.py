@@ -11,7 +11,6 @@ from folium.plugins import MiniMap
 import folium
 from folium import plugins
 
-
 app = Flask(__name__)
 
 @app.route('/')
