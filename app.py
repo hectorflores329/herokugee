@@ -1,19 +1,21 @@
 from flask import Flask
 import folium
-import folium.plugins as plugins
-import numpy as np
-import pandas as pd
-from datetime import datetime, timedelta
-from folium.plugins import FloatImage
-from folium.plugins import Draw
-from folium.plugins import MiniMap
-import folium
-from folium import plugins
+import ee
 
 app = Flask(__name__)
 
 @app.route('/')
 def mapa():
+    ## Trigger the authentication flow. You only need to do this once
+    ee.Authenticate()
+
+    # Initialize the library.
+    ee.Initialize()
+
+    dem = ee.Image('USGS/SRTMGL1_003')
+    xy = ee.Geometry.Point([86.9250, 27.9881])
+    elev = dem.sample(xy, 30).first().get('elevation').getInfo()
+    print('Mount Everest elevation (m):', elev)
 
     # Add custom basemaps to folium
     basemaps = {
@@ -61,7 +63,7 @@ def mapa():
     'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']}
 
     # Create a folium map object.
-    m = folium.Map(location=[40.33, -99.42], zoom_start=4, height=500)
+    m = folium.Map(location=[40.33, -99.42], zoom_start=4)
 
     # Add custom basemaps
     basemaps['Google Maps'].add_to(m)
