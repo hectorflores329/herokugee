@@ -1,3 +1,4 @@
+import ee
 from flask import Flask
 import folium
 import folium.plugins as plugins
@@ -9,7 +10,7 @@ from folium.plugins import Draw
 from folium.plugins import MiniMap
 import folium
 from folium import plugins
-import ee
+
 
 app = Flask(__name__)
 
