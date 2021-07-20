@@ -62,6 +62,7 @@ def mapa():
         transparent=True,
         overlay=True,
         control=True,
+        interactive=True,
     ).add_to(m)
 
     w1.add_to(m)
