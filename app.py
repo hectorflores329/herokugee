@@ -20,19 +20,17 @@ def mapa():
         max_zoom = 30,
         control_scale=True
         # tiles = "openstreetmap"
-        )
+    )
 
     w = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/chile/wms',
-                        layers = 'chile:Regiones',
-                        fmt ='image/png',
-                        transparent = True,
-                        name = "Regiones",
-                        control = True,
-                        attr = "Mapa de Chile",
-                        overlay=True,
-                        control=True,
-                        show=True
-                        )
+
+        layers = 'chile:Regiones',
+        fmt ='image/png',
+        transparent = True,
+        name = "Regiones",
+        control = True,
+        attr = "Mapa de Chile"
+    )
 
     w.add_to(m)
 
