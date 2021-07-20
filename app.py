@@ -20,8 +20,15 @@ def mapa():
     response = requests.get(
         "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson"
     )
+
+    url = (
+        "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson"
+    )
+
     data = response.json()
     states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
+    
+    antarctic_ice_edge = f"{url}/antarctic_ice_edge.json"
     
     # return states.to_html(header="true", table_id="table")
 
@@ -61,7 +68,7 @@ def mapa():
     )
 
     g = folium.GeoJson(
-        response,
+        antarctic_ice_edge,
         tooltip=tooltip,
         popup=popup
     ).add_to(m)
