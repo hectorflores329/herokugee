@@ -20,6 +20,18 @@ def mapa():
     )
     income["income-2015"] = pd.to_numeric(income["income-2015"], errors="coerce")
 
+    response = requests.get(
+        "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
+    )
+    data = response.json()
+    states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
+
+    response = requests.get(
+        "https://gist.githubusercontent.com/tvpmb/4734703/raw/"
+        "b54d03154c339ed3047c66fefcece4727dfc931a/US%2520State%2520List"
+    )
+    abbrs = pd.read_json(response.text)
+
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
         min_zoom = 8,
