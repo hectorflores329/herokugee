@@ -26,13 +26,6 @@ def mapa():
     # return states.to_html(header="true", table_id="table")
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
-
-    colormap = branca.colormap.LinearColormap(
-        vmin=states["NOM_CUENCA"],
-        colors=["red", "orange", "lightblue", "green", "darkgreen"],
-        caption="State Level Median County Household Income (%)",
-    )
-
     popup = GeoJsonPopup(
         fields=["NOM_CUENCA"],
         aliases=["COD_CUENCA"],
@@ -58,13 +51,6 @@ def mapa():
 
     g = folium.GeoJson(
         data,
-        style_function=lambda x: {
-            "fillColor": colormap(x["properties"]["NOM_CUENCA"])
-            if x["properties"]["NOM_CUENCA"] is not None
-            else "transparent",
-            "color": "black",
-            "fillOpacity": 0.4,
-        },
         tooltip=tooltip,
         popup=popup
     ).add_to(m)
@@ -72,6 +58,16 @@ def mapa():
     folium.LayerControl().add_to(m)
 
     return m._repr_html_()
+
+@app.route('/tabla')
+def tabla():
+    response = requests.get(
+        "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson"
+    )
+    data = response.json()
+    states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
+    
+    return states.to_html(header="true", table_id="table")
 
 if __name__ == '__main__':
     app.run()
