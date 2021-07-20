@@ -34,6 +34,18 @@ def mapa():
 
     w.add_to(m)
 
+    w1 = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/glaciares/wms',
+
+        layers = 'glaciares:porcR10_02_glaciar_zona_monitoreada',
+        fmt ='image/png',
+        transparent = True,
+        name = "Glaciares",
+        control = True,
+        attr = "Glaciares"
+    )
+
+    w1.add_to(m)
+
     folium.LayerControl().add_to(m)
 
 
