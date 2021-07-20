@@ -16,12 +16,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
-    income = pd.read_csv(
-        "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson",
-        dtype={"fips": str},
+
+    response = requests.get(
+        "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson"
     )
+    data = response.json()
     
-    print(income)
+    print(data)
 
     m = folium.Map(location=[35.3, -97.6], zoom_start=4)
 
