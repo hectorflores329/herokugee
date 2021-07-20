@@ -43,9 +43,30 @@ def mapa():
         attr = "Glaciares"
     )
 
+    folium.raster_layers.TileLayer(
+        tiles='http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+        attr='google',
+        name='google maps',
+        max_zoom=20,
+        subdomains=['mt0', 'mt1', 'mt2', 'mt3'],
+        overlay=False,
+        control=True,
+    ).add_to(m)
+
+    folium.raster_layers.WmsTileLayer(
+        url='http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
+        name='test',
+        fmt='image/png',
+        layers='nexrad-n0r-900913',
+        attr=u'Weather data © 2012 IEM Nexrad',
+        transparent=True,
+        overlay=True,
+        control=True,
+    ).add_to(m)
+
     w1.add_to(m)
 
-    folium.LatLngPopup().add_to(m)
+    # folium.LatLngPopup().add_to(m)
 
     folium.LayerControl().add_to(m)
 
