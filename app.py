@@ -26,6 +26,17 @@ def mapa():
     # return states.to_html(header="true", table_id="table")
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
+
+    w = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/glaciares_r14/wms?',
+                        layers = 'glaciares_r14:2021q1',
+                        fmt ='image/png',
+                        transparent = True,
+                        name = "Glaciares",
+                        control = True,
+                        attr = "Mapa de Chile"
+                        )
+    w.add_to(m)
+    
     popup = GeoJsonPopup(
         fields=["NOM_CUENCA"],
         aliases=["COD_CUENCA"],
@@ -66,7 +77,7 @@ def tabla():
     )
     data = response.json()
     states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
-    
+
     return states.to_html(header="true", table_id="table")
 
 if __name__ == '__main__':
