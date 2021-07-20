@@ -62,8 +62,10 @@ def mapa():
         transparent=True,
         overlay=True,
         control=True,
-        interactive=True,
+        interactive=False,
     ).add_to(m)
+
+    folium.features.RegularPolygonMarker(-33.48621795345005, -70.66557950912359, color='black', opacity=1, weight=2, fill_color='blue', fill_opacity=1, number_of_sides=4, rotation=0, radius=15, popup=None)
 
     w1.add_to(m)
 
