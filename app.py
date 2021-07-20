@@ -61,7 +61,7 @@ def mapa():
     )
 
     g = folium.GeoJson(
-        states,
+        response,
         tooltip=tooltip,
         popup=popup
     ).add_to(m)
