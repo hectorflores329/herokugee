@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 from folium.plugins import FloatImage
 from folium.plugins import Draw
 from folium.plugins import MiniMap
+from folium.features import GeoJsonPopup, GeoJsonTooltip
 
 app = Flask(__name__)
 
@@ -50,15 +51,6 @@ def mapa():
         left_on="alpha-2",
         right_on="state",
     )["change"]
-
-    m = folium.Map(
-        location=[-33.48621795345005, -70.66557950912359],
-        min_zoom = 8,
-        max_zoom = 100,
-        control_scale=True
-        # tiles = "openstreetmap"
-    )
-
     
     colormap = branca.colormap.LinearColormap(
         vmin=statesmerge["change"].quantile(0.0),
@@ -67,7 +59,48 @@ def mapa():
         caption="State Level Median County Household Income (%)",
     )
 
-    folium.LayerControl().add_to(m)
+    m = folium.Map(location=[35.3, -97.6], zoom_start=4)
+
+    popup = GeoJsonPopup(
+        fields=["name", "change"],
+        aliases=["State", "% Change"],
+        localize=True,
+        labels=True,
+        style="background-color: yellow;",
+    )
+
+    tooltip = GeoJsonTooltip(
+        fields=["name", "medianincome", "change"],
+        aliases=["State:", "2015 Median Income(USD):", "Median % Change:"],
+        localize=True,
+        sticky=False,
+        labels=True,
+        style="""
+            background-color: #F0EFEF;
+            border: 2px solid black;
+            border-radius: 3px;
+            box-shadow: 3px;
+        """,
+        max_width=800,
+    )
+
+
+    g = folium.GeoJson(
+        statesmerge,
+        style_function=lambda x: {
+            "fillColor": colormap(x["properties"]["change"])
+            if x["properties"]["change"] is not None
+            else "transparent",
+            "color": "black",
+            "fillOpacity": 0.4,
+        },
+        tooltip=tooltip,
+        popup=popup,
+    ).add_to(m)
+
+    colormap.add_to(m)
+
+    # folium.LayerControl().add_to(m)
 
 
     return m._repr_html_()
