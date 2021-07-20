@@ -38,16 +38,16 @@ def mapa():
     w.add_to(m)
 
     popup = GeoJsonPopup(
-        fields=["NOM_CUENCA"],
-        aliases=["COD_CUENCA"],
+        fields=["COD_CUENCA"],
+        aliases=["NOM_CUENCA"],
         localize=True,
         labels=True,
         style="background-color: yellow;",
     )
 
     tooltip = GeoJsonTooltip(
-        fields=["NOM_CUENCA"],
-        aliases=["COD_CUENCA:"],
+        fields=["COD_CUENCA"],
+        aliases=["NOM_CUENCA:"],
         localize=True,
         sticky=False,
         labels=True,
