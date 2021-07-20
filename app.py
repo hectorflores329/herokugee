@@ -27,6 +27,12 @@ def mapa():
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
+    colormap = branca.colormap.LinearColormap(
+        vmin=states["NOM_CUENCA"],
+        colors=["red", "orange", "lightblue", "green", "darkgreen"],
+        caption="State Level Median County Household Income (%)",
+    )
+
     popup = GeoJsonPopup(
         fields=["NOM_CUENCA"],
         aliases=["COD_CUENCA"],
@@ -52,6 +58,13 @@ def mapa():
 
     g = folium.GeoJson(
         data,
+        style_function=lambda x: {
+            "fillColor": colormap(x["properties"]["NOM_CUENCA"])
+            if x["properties"]["NOM_CUENCA"] is not None
+            else "transparent",
+            "color": "black",
+            "fillOpacity": 0.4,
+        },
         tooltip=tooltip,
         popup=popup,
         name = "Capa"
