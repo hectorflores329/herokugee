@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import requests
 import geopandas
+import branca
 from datetime import datetime, timedelta
 from folium.plugins import FloatImage
 from folium.plugins import Draw
@@ -56,6 +57,14 @@ def mapa():
         max_zoom = 100,
         control_scale=True
         # tiles = "openstreetmap"
+    )
+
+    
+    colormap = branca.colormap.LinearColormap(
+        vmin=statesmerge["change"].quantile(0.0),
+        vmax=statesmerge["change"].quantile(1),
+        colors=["red", "orange", "lightblue", "green", "darkgreen"],
+        caption="State Level Median County Household Income (%)",
     )
 
     folium.LayerControl().add_to(m)
