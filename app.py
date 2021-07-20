@@ -32,29 +32,10 @@ def mapa():
         "https://gist.githubusercontent.com/tvpmb/4734703/raw/"
         "b54d03154c339ed3047c66fefcece4727dfc931a/US%2520State%2520List"
     )
-    abbrs = pd.read_json(response.text)
-
-    statesmerge = states.merge(abbrs, how="left", left_on="name", right_on="name")
-    statesmerge["geometry"] = statesmerge.geometry.simplify(0.05)
-
-    income.groupby(by="state")[["state", "income-2015"]].median().head()
-
-    statesmerge["medianincome"] = statesmerge.merge(
-        income.groupby(by="state")[["state", "income-2015"]].median(),
-        how="left",
-        left_on="alpha-2",
-        right_on="state",
-    )["income-2015"]
-    statesmerge["change"] = statesmerge.merge(
-        income.groupby(by="state")[["state", "change"]].median(),
-        how="left",
-        left_on="alpha-2",
-        right_on="state",
-    )["change"]
     
     colormap = branca.colormap.LinearColormap(
-        vmin=statesmerge["change"].quantile(0.0),
-        vmax=statesmerge["change"].quantile(1),
+        vmin=income["change"].quantile(0.0),
+        vmax=income["change"].quantile(1),
         colors=["red", "orange", "lightblue", "green", "darkgreen"],
         caption="State Level Median County Household Income (%)",
     )
@@ -86,7 +67,7 @@ def mapa():
 
 
     g = folium.GeoJson(
-        statesmerge,
+        income,
         style_function=lambda x: {
             "fillColor": colormap(x["properties"]["change"])
             if x["properties"]["change"] is not None
