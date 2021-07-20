@@ -12,8 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
-    region = 13
-    
+
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
         min_zoom = 8,
@@ -30,7 +29,7 @@ def mapa():
         name = "Regiones",
         control = True,
         attr = "Mapa de Chile",
-        cql_filter = 'REGION = ' + region,
+        cql_filter = 'REGION = 13'
     )
 
     w.add_to(m)
