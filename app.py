@@ -66,8 +66,7 @@ def mapa():
             "fillOpacity": 0.4,
         },
         tooltip=tooltip,
-        popup=popup,
-        name = "Capa"
+        popup=popup
     ).add_to(m)
 
     folium.LayerControl().add_to(m)
