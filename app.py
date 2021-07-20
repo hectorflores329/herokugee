@@ -22,9 +22,7 @@ def mapa():
     )
     data = response.json()
     states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
-
-    statesmerge = states["geometry"] = states.geometry.simplify(0.05)
-
+    
     # return states.to_html(header="true", table_id="table")
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
@@ -63,7 +61,7 @@ def mapa():
     )
 
     g = folium.GeoJson(
-        statesmerge,
+        states,
         tooltip=tooltip,
         popup=popup
     ).add_to(m)
