@@ -23,11 +23,11 @@ def mapa():
     data = response.json()
     states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
 
-    return states.to_html(header="true", table_id="table")
+    # return states.to_html(header="true", table_id="table")
 
-    # m = folium.Map(location=[35.3, -97.6], zoom_start=4)
+    m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
-    # return m._repr_html_()
+    return m._repr_html_()
 
 if __name__ == '__main__':
     app.run()
