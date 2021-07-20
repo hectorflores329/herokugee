@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from folium.plugins import FloatImage
 from folium.plugins import Draw
 from folium.plugins import MiniMap
+import geopandas
 
 app = Flask(__name__)
 
@@ -21,34 +22,15 @@ def mapa():
         # tiles = "openstreetmap"
     )
 
-    w = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/chile/wms',
-
-        layers = 'chile:Regiones',
-        fmt ='image/png',
-        transparent = True,
-        name = "Regiones",
-        control = True,
-        attr = "Mapa de Chile"
+    states = geopandas.read_file(
+        "https://rawcdn.githack.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json",
+        driver="GeoJSON",
     )
 
-    w.add_to(m)
-
-    w1 = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/glaciares/wms',
-
-        layers = 'glaciares:porcR10_02_glaciar_zona_monitoreada',
-        fmt ='image/png',
-        transparent = True,
-        name = "Glaciares",
-        control = True,
-        attr = "Glaciares"
+    cities = geopandas.read_file(
+        "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_populated_places_simple.geojson",
+        driver="GeoJSON",
     )
-
-    w1.add_to(m)
-
-    folium.LatLngPopup().add_to(m)
-
-    folium.LayerControl().add_to(m)
-
 
     return m._repr_html_()
     # return HeatMapWithTime(lat_long_list2,radius=5,auto_play=True,position='bottomright').add_to(map)
