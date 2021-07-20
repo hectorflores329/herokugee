@@ -20,10 +20,10 @@ app = Flask(__name__)
 def mapa():
 
     url = (
-    "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data"
+        "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
     )
-    antarctic_ice_edge = f"{url}/antarctic_ice_edge.json"
-    antarctic_ice_shelf_topo = f"{url}/antarctic_ice_shelf_topo.json"
+    antarctic_ice_edge = f"{url}/features.json"
+    antarctic_ice_shelf_topo = f"{url}/topo.json"
 
 
     m = folium.Map(
