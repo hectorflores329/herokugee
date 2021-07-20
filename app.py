@@ -50,6 +50,12 @@ def mapa():
         max_width=800,
     )
 
+    g = folium.GeoJson(
+        states,
+        tooltip=tooltip,
+        popup=popup,
+    ).add_to(m)
+
     return m._repr_html_()
 
 if __name__ == '__main__':
