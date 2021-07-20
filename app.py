@@ -18,7 +18,7 @@ app = Flask(__name__)
 def mapa():
 
     response = requests.get(
-        "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
+        "https://ide.dataintelligence-group.com/geoserver/glaciares/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glaciares%3AR14_Subcuencas_Glaciares&maxFeatures=50&outputFormat=application%2Fjson"
     )
     data = response.json()
     states = geopandas.GeoDataFrame.from_features(data, crs="EPSG:4326")
