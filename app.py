@@ -34,9 +34,6 @@ def mapa():
 
     w.add_to(m)
 
-    folium.TileLayer('openstreetmap').add_to(m)
-    folium.TileLayer('cartodbpositron').add_to(m)
-    folium.TileLayer('cartodbdark_matter').add_to(m)
     folium.LayerControl().add_to(m)
 
 
