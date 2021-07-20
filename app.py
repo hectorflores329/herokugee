@@ -37,6 +37,19 @@ def mapa():
 
     income.groupby(by="state")[["state", "income-2015"]].median().head()
 
+    statesmerge["medianincome"] = statesmerge.merge(
+        income.groupby(by="state")[["state", "income-2015"]].median(),
+        how="left",
+        left_on="alpha-2",
+        right_on="state",
+    )["income-2015"]
+    statesmerge["change"] = statesmerge.merge(
+        income.groupby(by="state")[["state", "change"]].median(),
+        how="left",
+        left_on="alpha-2",
+        right_on="state",
+    )["change"]
+
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
         min_zoom = 8,
