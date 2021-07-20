@@ -43,6 +43,10 @@ def mapa():
         attr = "Glaciares"
     )
 
+    w1.add_to(m)
+
+    folium.LatLngPopup().add_to(m)
+
     folium.LayerControl().add_to(m)
 
 
