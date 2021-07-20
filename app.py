@@ -54,6 +54,7 @@ def mapa():
         data,
         tooltip=tooltip,
         popup=popup,
+        name = "Capa"
     ).add_to(m)
 
     folium.LayerControl().add_to(m)
