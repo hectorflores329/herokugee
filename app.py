@@ -23,6 +23,7 @@ def mapa():
         "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
     )
     antarctic_ice_edge = f"{url}/features.json"
+    antarctic_ice_shelf_topo = f"{url}/topo.json"
 
 
     m = folium.Map(
@@ -32,6 +33,12 @@ def mapa():
     )
 
     folium.GeoJson(antarctic_ice_edge, name="geojson").add_to(m)
+
+    folium.TopoJson(
+        json.loads(requests.get(antarctic_ice_shelf_topo).text),
+        "objects.features",
+        name="topojson",
+    ).add_to(m)
 
     folium.LayerControl().add_to(m)
 
