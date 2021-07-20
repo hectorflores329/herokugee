@@ -36,7 +36,7 @@ def mapa():
                         attr = "Mapa de Chile"
                         )
     w.add_to(m)
-    
+
     popup = GeoJsonPopup(
         fields=["NOM_CUENCA"],
         aliases=["COD_CUENCA"],
@@ -61,7 +61,7 @@ def mapa():
     )
 
     g = folium.GeoJson(
-        data,
+        states,
         tooltip=tooltip,
         popup=popup
     ).add_to(m)
