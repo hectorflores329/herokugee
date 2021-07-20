@@ -32,6 +32,11 @@ def mapa():
     )
     abbrs = pd.read_json(response.text)
 
+    statesmerge = states.merge(abbrs, how="left", left_on="name", right_on="name")
+    statesmerge["geometry"] = statesmerge.geometry.simplify(0.05)
+
+    income.groupby(by="state")[["state", "income-2015"]].median().head()
+
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
         min_zoom = 8,
