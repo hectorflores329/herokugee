@@ -12,7 +12,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
-
+    region = 13
+    
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
         min_zoom = 8,
@@ -28,7 +29,8 @@ def mapa():
         transparent = True,
         name = "Regiones",
         control = True,
-        attr = "Mapa de Chile"
+        attr = "Mapa de Chile",
+        cql_filter = 'REGION = ' + region,
     )
 
     w.add_to(m)
@@ -43,29 +45,6 @@ def mapa():
         attr = "Glaciares"
     )
 
-    folium.raster_layers.TileLayer(
-        tiles='http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
-        attr='google',
-        name='google maps',
-        max_zoom=20,
-        subdomains=['mt0', 'mt1', 'mt2', 'mt3'],
-        overlay=False,
-        control=True,
-    ).add_to(m)
-
-    folium.raster_layers.WmsTileLayer(
-        url='http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
-        name='test',
-        fmt='image/png',
-        layers='nexrad-n0r-900913',
-        attr=u'Weather data © 2012 IEM Nexrad',
-        transparent=True,
-        overlay=True,
-        control=True,
-        interactive=False,
-    ).add_to(m)
-
-    folium.features.RegularPolygonMarker(-33.48621795345005, -70.66557950912359, color='black', opacity=1, weight=2, fill_color='blue', fill_opacity=1, number_of_sides=4, rotation=0, radius=15, popup=None)
 
     w1.add_to(m)
 
