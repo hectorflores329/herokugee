@@ -12,6 +12,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
+    income = pd.read_csv(
+        "https://raw.githubusercontent.com/pri-data/50-states/master/data/income-counties-states-national.csv",
+        dtype={"fips": str},
+    )
+    income["income-2015"] = pd.to_numeric(income["income-2015"], errors="coerce")
 
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
@@ -20,34 +25,6 @@ def mapa():
         control_scale=True
         # tiles = "openstreetmap"
     )
-
-    w = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/chile/wms',
-
-        layers = 'chile:Regiones',
-        fmt ='image/png',
-        transparent = True,
-        name = "Regiones",
-        control = True,
-        attr = "Mapa de Chile",
-        cql_filter = 'REGION = 13'
-    )
-
-    w.add_to(m)
-
-    w1 = folium.WmsTileLayer(url = 'https://ide.dataintelligence-group.com/geoserver/glaciares/wms',
-
-        layers = 'glaciares:porcR10_02_glaciar_zona_monitoreada',
-        fmt ='image/png',
-        transparent = True,
-        name = "Glaciares",
-        control = True,
-        attr = "Glaciares"
-    )
-
-
-    w1.add_to(m)
-
-    # folium.LatLngPopup().add_to(m)
 
     folium.LayerControl().add_to(m)
 
