@@ -4,6 +4,7 @@ import folium.plugins as plugins
 import numpy as np
 import pandas as pd
 import ee
+import ee.mapclient
 from datetime import datetime, timedelta
 from folium.plugins import FloatImage
 from folium.plugins import Draw
