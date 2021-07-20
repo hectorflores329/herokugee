@@ -3,6 +3,8 @@ import folium
 import folium.plugins as plugins
 import numpy as np
 import pandas as pd
+import requests
+import geopandas
 from datetime import datetime, timedelta
 from folium.plugins import FloatImage
 from folium.plugins import Draw
