@@ -51,10 +51,12 @@ def mapa():
     )
 
     g = folium.GeoJson(
-        states,
+        data,
         tooltip=tooltip,
         popup=popup,
     ).add_to(m)
+
+    folium.LayerControl().add_to(m)
 
     return m._repr_html_()
 
