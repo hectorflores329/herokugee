@@ -27,6 +27,29 @@ def mapa():
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
+    popup = GeoJsonPopup(
+        fields=["NOM_CUENCA"],
+        aliases=["COD_CUENCA"],
+        localize=True,
+        labels=True,
+        style="background-color: yellow;",
+    )
+
+    tooltip = GeoJsonTooltip(
+        fields=["NOM_CUENCA"],
+        aliases=["COD_CUENCA:"],
+        localize=True,
+        sticky=False,
+        labels=True,
+        style="""
+            background-color: #F0EFEF;
+            border: 2px solid black;
+            border-radius: 3px;
+            box-shadow: 3px;
+        """,
+        max_width=800,
+    )
+
     return m._repr_html_()
 
 if __name__ == '__main__':
