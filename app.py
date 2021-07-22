@@ -7,8 +7,6 @@ except ImportError:
     subprocess.check_call(["python", '-m', 'pip', 'install', 'ee'])
 
 import ee
-import geemap
-
 from flask import Flask
 import folium
 
