@@ -1,6 +1,6 @@
+import ee
 from flask import Flask
 import folium
-import ee
 
 app = Flask(__name__)
 
