@@ -1,4 +1,11 @@
-import ee as Ee
+import subprocess
+
+try:
+    import ee
+except ImportError:
+    print('ee package not installed. Installing ...')
+    subprocess.check_call(["python", '-m', 'pip', 'install', 'ee'])
+
 from flask import Flask
 import folium
 
