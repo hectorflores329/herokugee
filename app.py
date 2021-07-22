@@ -6,6 +6,9 @@ except ImportError:
     print('ee package not installed. Installing ...')
     subprocess.check_call(["python", '-m', 'pip', 'install', 'ee'])
 
+import ee
+import geemap
+
 from flask import Flask
 import folium
 
