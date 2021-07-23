@@ -1,15 +1,3 @@
-import sys
-import subprocess
-
-try:
-    import ee
-except ImportError:
-    print('ee package not installed. Installing ...')
-    # subprocess.check_call(["python", '-m', 'pip', 'install', 'ee'])
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install','ee'])
-
-import ee
-
 from flask import Flask
 import folium
 
@@ -17,6 +5,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
+
+    import ee
+    import datetime
+
+    ee.Authenticate()
+    ee.Initialize()
+
+    img = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_034033_20000913')
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
