@@ -9,11 +9,6 @@ def mapa():
     import ee
     import datetime
 
-    ee.Authenticate()
-    ee.Initialize()
-
-    img = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_034033_20000913')
-
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
     return m._repr_html_()
