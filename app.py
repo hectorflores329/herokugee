@@ -103,4 +103,4 @@ api.add_resource(ClickPointData, '/api/click-point-data/')
 
 # This is only used when running locally. When running live, Gunicorn runs the application.
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=os.getenv('DEBUG') == 'True')
+    app.run()
