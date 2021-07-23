@@ -7,7 +7,6 @@ app = Flask(__name__)
 def mapa():
 
     import ee
-    import datetime
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
