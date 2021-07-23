@@ -1,11 +1,6 @@
 import ee
-import geemap
+import geemap.foliumap as geemap
 
-try:
-    ee.Initialize()
-except Exception as e:
-    ee.Authenticate()
-    ee.Initialize()
 
 from flask import Flask
 import folium
