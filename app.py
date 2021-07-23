@@ -1,6 +1,5 @@
 import ee
-import geemap.foliumap as geemap
-
+import geemap
 
 from flask import Flask
 import folium
@@ -9,6 +8,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
+
+    ee.Authenticate()
+    ee.Initialize()
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
