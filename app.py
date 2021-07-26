@@ -14,7 +14,7 @@ def mapa():
 
     # Map = geemap.Map(center=[-33.48621795345005, -70.66557950912359], zoom=4)
     
-    #Map = geemap.Map()
+    Map = geemap.Map()
     
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
