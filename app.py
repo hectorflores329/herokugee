@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def mapa():
-
+    
+    ee.Initialize()
     image = ee.Image('USGS/SRTMGL1_003')
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
