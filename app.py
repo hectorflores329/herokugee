@@ -1,4 +1,4 @@
-import ee
+# import ee
 import geemap
 
 from flask import Flask
