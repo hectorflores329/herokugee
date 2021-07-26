@@ -1,12 +1,3 @@
-import subprocess
-
-try:
-    import geemap
-except ImportError:
-    print('Installing geemap ...')
-    subprocess.check_call(["python", '-m', 'pip', 'install', 'geemap'])
-
-
 import ee
 import geemap
 
