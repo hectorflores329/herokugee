@@ -9,8 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def mapa():
 
-    ee.Initialize()
-    sentinel1 = ee.ImageCollection('COPERNICUS/S1_GRD').filterBounds(ee.Geometry.Point(-122.37383, 37.6193))
+    image = ee.Image('USGS/SRTMGL1_003')
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
