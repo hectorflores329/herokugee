@@ -19,11 +19,12 @@ app = Flask(__name__)
 @app.route('/')
 def mapa():
 
-    Map = geemap.Map(center=[-33.48621795345005, -70.66557950912359], zoom=4)
+    # Map = geemap.Map(center=[-33.48621795345005, -70.66557950912359], zoom=4)
+    
+    fc = ee.FeatureCollection('TIGER/2018/States').filter(ee.Filter.eq('STUSPS', 'MN'))
+    m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
-    # m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
-
-    return Map._repr_html_()
+    return m._repr_html_()
     # return HeatMapWithTime(lat_long_list2,radius=5,auto_play=True,position='bottomright').add_to(map)
 
 if __name__ == '__main__':
