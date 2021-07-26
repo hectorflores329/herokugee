@@ -4,4 +4,14 @@ Flask==1.1.2
 gunicorn==19.5.0
 pandas==1.3.0
 ee==0.2
-geemap==0.8.18 
+geemap==0.8.18
+earthengine-api==0.1.273
+google-api-core==1.31.0
+google-api-python-client==1.12.8
+google-auth==1.33.0
+google-auth-httplib2==0.1.0
+google-cloud-core==1.7.1
+google-cloud-storage==1.41.0
+google-crc32c==1.1.2
+google-resumable-media==1.3.1
+googleapis-common-protos==1.53.0
