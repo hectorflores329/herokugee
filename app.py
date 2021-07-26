@@ -17,7 +17,7 @@ def mapa():
     dem = ee.Image('USGS/SRTMGL1_003')
     xy = ee.Geometry.Point([86.9250, 27.9881])
     elev = dem.sample(xy, 30).first().get('elevation').getInfo()
-    print('Mount Everest elevation (m):', elev)
+    # print('Mount Everest elevation (m):', elev)
 
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
