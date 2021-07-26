@@ -19,6 +19,8 @@ app = Flask(__name__)
 @app.route('/')
 def mapa():
 
+    Map = geemap.Map(center=[40,-100], zoom=4)
+    
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
 
     return m._repr_html_()
