@@ -9,9 +9,10 @@ app = Flask(__name__)
 def mapa():
     
     # Get a composite of all Sentinal 2 images within a date range that include my point of interest.
-    point = ee.Geometry.Point([-82.4572, 27.9506])
-
+    #point = ee.Geometry.Point([-82.4572, 27.9506])
+    
     m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
+    folium.Marker([-33.48621795345005, -70.66557950912359], popup='Plaza Mayor').add_to(m)
     return m._repr_html_()
 
 
