@@ -11,13 +11,13 @@ def mapa():
     
     # folium.Marker([-33.48621795345005, -70.66557950912359], popup='Plaza Mayor').add_to(m)
 
-    html = "<p>Latitud: 40.0</p><p>Longitud: 2.1</p>"
+    html = "<p>Latitud: -70.84960050794211</p><p>Longitud: -33.2993248483003</p>"
     iframe1 = branca.element.IFrame(html=html, width=250, height=200)
-    html = "<p>Latitud: 40.0</p><p>Longitud: 3.5</p>"
+    html = "<p>Latitud: -70.84960050794211</p><p>Longitud: -33.62240730758864</p>"
     iframe2 = branca.element.IFrame(html=html, width=250, height=200)
-    html = "<p>Latitud: 39.0</p><p>Longitud: 2.1</p>"
+    html = "<p>Latitud: -70.43761319983437</p><p>Longitud: -33.560633705782394</p>"
     iframe3 = branca.element.IFrame(html=html, width=250, height=200)
-    html = "<p>Latitud: 39.0</p><p>Longitud: 3.5</p>"
+    html = "<p>Latitud: -70.45821256523976</p><p>Longitud: -33.2844019692712</p>"
     iframe4 = branca.element.IFrame(html=html, width=250, height=200)
 
     marcador1 = folium.Marker(
