@@ -62,7 +62,7 @@ def mapa():
         return map_object
 
     list_of_points = randome_points(
-        amount=10, LON_min=49.1, LON_max=50, LAT_min=8, LAT_max=9
+        amount=10, LON_min=33.25914205737692, LON_max=-33.62355085045804, LAT_min=-70.86470569556295, LAT_max=-70.49941030927077
     )
 
     create_envelope_polygon(
