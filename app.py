@@ -37,7 +37,8 @@ def mapa():
                     style_function = lambda feature: {
                     'fillColor': getcolor(feature),
                     'weight': 0,
-                    'color': '#3d3d3d',
+                    'color': 'black',
+                    'weight': '2',
                     'fillOpacity': 0.8,},
                     tooltip = folium.GeoJsonTooltip(fields=["Nom_com", "median"],
                     aliases = ['Comuna', 'Temperatura'],
