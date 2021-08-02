@@ -11,7 +11,7 @@ def mapa():
     url = (
         "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
     )
-    mediambiente = f"{url}/elbosque2.json"
+    mediambiente = f"{url}/table.geojson"
 
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
@@ -24,10 +24,10 @@ def mapa():
     folium.GeoJson(mediambiente, 
                     name="Glaciares",
                     style_function = lambda feature: {
-                    #'fillColor': getcolor(feature),
+                    'fillColor': '#ffbd48',
                     'weight': 0,
                     'fillOpacity': 0.8,},
-                    tooltip = folium.GeoJsonTooltip(fields=["NOM_COM", "TEMP"],
+                    tooltip = folium.GeoJsonTooltip(fields=["Nom_com", "median"],
                     aliases = ['Comuna', 'Temperatura'],
                     )
     ).add_to(m)
