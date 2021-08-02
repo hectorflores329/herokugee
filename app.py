@@ -2,6 +2,8 @@ import folium
 from flask import Flask
 #import branca
 import random
+import branca.colormap as cm
+from branca.element import Template, MacroElement
 
 app = Flask(__name__)
 
