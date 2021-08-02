@@ -31,9 +31,9 @@ def mapa():
             return 'transparent'
 
     folium.GeoJson(mediambiente, 
-                    name="Glaciares",
+                    name="Temperatura",
                     style_function = lambda feature: {
-                    #'fillColor': getcolor(feature),
+                    'fillColor': getcolor(feature),
                     'weight': 0,
                     'fillOpacity': 0.8,},
                     tooltip = folium.GeoJsonTooltip(fields=["Nom_reg", "median"],
