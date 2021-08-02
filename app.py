@@ -8,72 +8,29 @@ app = Flask(__name__)
 @app.route('/')
 def mapa():
     
-    m = folium.Map(location=[-33.48621795345005, -70.66557950912359], zoom_start=4)
-    
-    def randome_points(amount, LON_min, LON_max, LAT_min, LAT_max):
+    url = (
+        "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
+    )
+    mediambiente = f"{url}/elbosque.json"
 
-        points = []
-        for _ in range(amount):
-            points.append(
-                (random.uniform(LON_min, LON_max), random.uniform(LAT_min, LAT_max))
-            )
-
-        return points
-
-    def create_envelope_polygon(
-        map_object, list_of_points, layer_name, line_color, fill_color, weight, text
-    ):
-
-        # Since it is pointless to draw a box around less than 2 points check len of input
-        if len(list_of_points) < 2:
-            return
-
-        # Find the edges of box
-        from operator import itemgetter
-
-        list_of_points = sorted(list_of_points, key=itemgetter(0))
-        x_min = list_of_points[0]
-        x_max = list_of_points[len(list_of_points) - 1]
-
-        list_of_points = sorted(list_of_points, key=itemgetter(1))
-        y_min = list_of_points[0]
-        y_max = list_of_points[len(list_of_points) - 1]
-
-        upper_left = (x_min[0], y_max[1])
-        upper_right = (x_max[0], y_max[1])
-        lower_right = (x_max[0], y_min[1])
-        lower_left = (x_min[0], y_min[1])
-
-        edges = [upper_left, upper_right, lower_right, lower_left]
-
-        # Create feature group, add the polygon and add the feature group to the map
-        fg = folium.FeatureGroup(name=layer_name)
-        fg.add_child(
-            folium.vector_layers.Polygon(
-                locations=edges,
-                color=line_color,
-                fill_color=fill_color,
-                weight=weight,
-                popup=(folium.Popup(text)),
-            )
-        )
-        map_object.add_child(fg)
-
-        return map_object
-
-    list_of_points = randome_points(
-        amount=10, LON_min=-33.48621795345005, LON_max=-33.80621795345005, LAT_min=-70.66557950912359, LAT_max=-70.80557950912359
+    m = folium.Map(
+        location=[-33.48621795345005, -70.66557950912359],
+        zoom_start=5,
+        control_scale=True
+        # tiles = "openstreetmap"
     )
 
-    create_envelope_polygon(
-        m,
-        list_of_points,
-        layer_name="Example envelope",
-        line_color="indianred",
-        fill_color="red",
-        weight=5,
-        text="Example envelope",
-    )
+
+    folium.GeoJson(mediambiente, 
+                    name="Glaciares",
+                    style_function = lambda feature: {
+                    #'fillColor': getcolor(feature),
+                    'weight': 0,
+                    'fillOpacity': 0.8,},
+                    tooltip = folium.GeoJsonTooltip(fields=["Parcela_ID", "median"],
+                    aliases = ['Parcela ID', 'Temperatura'],
+                    )
+    ).add_to(m)
 
     return m._repr_html_()
 
