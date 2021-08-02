@@ -38,7 +38,7 @@ def mapa():
                     'fillColor': getcolor(feature),
                     'weight': 0,
                     'fillOpacity': 0.8,},
-                    tooltip = folium.GeoJsonTooltip(fields=["Nom_reg", "median"],
+                    tooltip = folium.GeoJsonTooltip(fields=["Nom_com", "median"],
                     aliases = ['Comuna', 'Temperatura'],
                     )
     ).add_to(m)
@@ -82,9 +82,9 @@ def mapa():
     <div class='legend-title'>Temperatura</div>
     <div class='legend-scale'>
     <ul class='legend-labels'>
-        <li><span style='background:#ffbd48;opacity:0.7;'></span>1 - 5</li>
-        <li><span style='background:#ff8548;opacity:0.7;'></span>6 - 10</li>
-        <li><span style='background:#ff4848;opacity:0.7;'></span>11 - 100</li>
+        <li><span style='background:#ffbd48;opacity:0.7;'></span>20° - 30°</li>
+        <li><span style='background:#ff8548;opacity:0.7;'></span>31° -35°</li>
+        <li><span style='background:#ff4848;opacity:0.7;'></span>36° - 40°</li>
 
     </ul>
     </div>
