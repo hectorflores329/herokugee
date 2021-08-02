@@ -17,7 +17,7 @@ def mapa():
 
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
-        zoom_start=5,
+        zoom_start=7,
         control_scale=True
         # tiles = "openstreetmap"
     )
@@ -36,7 +36,7 @@ def mapa():
                     name="Temperatura",
                     style_function = lambda feature: {
                     'fillColor': getcolor(feature),
-                    'weight': 0,
+                    'weight': 1,
                     'color': 'black',
                     'weight': '2',
                     'fillOpacity': 0.8,},
