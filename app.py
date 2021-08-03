@@ -29,9 +29,9 @@ def mapa():
                 auto_play=False, loop=False, 
                 maxSpeed=1, loopButton=True,
                 dateOptions='YYYY/MM/DD',
-                timeSliderDragUpdate=True).add_to(m)
+                timeSliderDragUpdate=True).add_to(m)'''
 
-    return m._repr_html_()'''
+    return m._repr_html_()
 
 
 if __name__ == '__main__':
