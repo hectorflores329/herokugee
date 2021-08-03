@@ -10,12 +10,12 @@ app = Flask(__name__)
 @app.route('/')
 def mapa():
     
-    '''def downloadJson(link):
+    def downloadJson(link):
         
         with urllib.request.urlopen(link) as url:
             data = json.loads(url.read().decode())
         
-        return data'''
+        return data
 
     # spatial_temporal_data = downloadJson("https://raw.githubusercontent.com/ghandic/folium/master/examples/data/house_movement.json")
 
