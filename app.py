@@ -21,10 +21,14 @@ def mapa():
         # tiles = "openstreetmap"
     )
 
-    data = [100,200,300,400]
-    hm = plugins.HeatMapWithTime(mediambiente, index=data, auto_play=True, max_opacity=0.3)
-
-    hm.add_to(m)
+    plugins.TimestampedGeoJson(
+    {
+        "type": "FeatureCollection",
+        "features": mediambiente,
+    },
+        period="PT1M",
+        add_last_point=True,
+    ).add_to(m)
 
     def getcolor(feature):
         if feature['properties']['median'] >= 20.0 and feature['properties']['median'] <= 30.0:
