@@ -23,15 +23,12 @@ def mapa():
 
     plugins.TimestampedGeoJson(
         {"type": "FeatureCollection", "features": mediambiente},
-        period="P1M",
-        add_last_point=True,
+        period='P1M',
+        duration='P1M',
         auto_play=False,
         loop=False,
-        max_speed=1,
         loop_button=True,
-        date_options="YYYY/MM/DD",
-        time_slider_drag_update=True,
-        duration="P2M",
+        date_options='YYYY/MM/DD',
     ).add_to(m)
 
     def getcolor(feature):
