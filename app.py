@@ -17,10 +17,10 @@ def mapa():
         
         return data
 
-    spatial_temporal_data = downloadJson("https://raw.githubusercontent.com/ghandic/folium/master/examples/data/house_movement.json")
+    spatial_temporal_data = downloadJson("https://raw.githubusercontent.com/hectorflores329/herokugee/main/table.geojson")
 
     m = folium.Map(
-        location=[56.096555, -3.64746],
+        location=[-33.48621795345005, -70.66557950912359],
         tiles = 'cartodbpositron',
         zoom_start=5
     )
