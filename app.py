@@ -3,42 +3,34 @@ from flask import Flask
 import branca.colormap as cm
 from branca.element import Template, MacroElement
 import folium.plugins as plugins
+import urllib.request, json 
 
 app = Flask(__name__)
 
 @app.route('/')
 def mapa():
     
-    m = folium.Map(location=[52.467697, -2.548828], zoom_start=6)
+    def downloadJson(link):
+        
+        with urllib.request.urlopen(link) as url:
+            data = json.loads(url.read().decode())
+        
+        return data
 
-    polygon = {
-            'type': 'Feature',
-            'geometry': {
-                'type': 'MultiPolygon',
-                'coordinates': [((
-                    (-2.548828, 51.467697),
-                    (-0.087891, 51.536086),
-                    (-1.516113, 53.800651),
-                    (-6.240234, 53.383328),
-                ),)],
-            },
-            'properties': {
-                'style': {
-                    'color': 'blue',
-                },
-                'times': ['2015-07-22', '2015-08-22', '2015-09-22']
-            }
-        }
+    spatial_temporal_data = downloadJson("https://raw.githubusercontent.com/ghandic/folium/master/examples/data/house_movement.json")
 
-    plugins.TimestampedGeoJson(
-        {'type': 'FeatureCollection', 'features': [polygon]},
-        period='P1M',
-        duration='P1M',
-        auto_play=False,
-        loop=False,
-        loop_button=True,
-        date_options='YYYY/MM/DD',
-    ).add_to(m)
+    m = folium.Map(
+        location=[56.096555, -3.64746],
+        tiles = 'cartodbpositron',
+        zoom_start=5
+    )
+
+    plugins.TimestampedGeoJson(spatial_temporal_data, 
+                period='P1M', add_last_point=True,
+                auto_play=False, loop=False, 
+                maxSpeed=1, loopButton=True,
+                dateOptions='YYYY/MM/DD',
+                timeSliderDragUpdate=True).add_to(m)
 
     return m._repr_html_()
 
