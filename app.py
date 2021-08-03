@@ -1,9 +1,8 @@
 import folium
 from flask import Flask
-#import branca
-import random
 import branca.colormap as cm
 from branca.element import Template, MacroElement
+import folium.plugins as plugins
 
 app = Flask(__name__)
 
@@ -21,6 +20,11 @@ def mapa():
         control_scale=True
         # tiles = "openstreetmap"
     )
+
+    data = [100,200,300,400]
+    hm = plugins.HeatMapWithTime(data)
+
+    hm.add_to(m)
 
     def getcolor(feature):
         if feature['properties']['median'] >= 20.0 and feature['properties']['median'] <= 30.0:
