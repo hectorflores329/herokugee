@@ -22,7 +22,7 @@ def mapa():
     )
 
     data = [100,200,300,400]
-    hm = plugins.HeatMapWithTime(data)
+    hm = plugins.HeatMapWithTime(mediambiente, index=data, auto_play=True, max_opacity=0.3)
 
     hm.add_to(m)
 
