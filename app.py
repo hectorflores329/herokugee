@@ -1,75 +1,145 @@
 import folium
 from flask import Flask
+#import branca
+import random
 import branca.colormap as cm
 from branca.element import Template, MacroElement
-import folium.plugins as plugins
-import urllib.request, json 
 
 app = Flask(__name__)
 
 @app.route('/')
 def mapa():
     
-    def downloadJson(link):
-        
-        with urllib.request.urlopen(link) as url:
-            data = json.loads(url.read().decode())
-        
-        return data
+    url = (
+        "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
+    )
+    mediambiente = f"{url}/table.geojson"
 
-    spatial_temporal_data = downloadJson("https://raw.githubusercontent.com/hectorflores329/herokugee/main/table.geojson")
+    m = folium.Map(
+        location=[-33.48621795345005, -70.66557950912359],
+        zoom_start=8,
+        control_scale=True
+        # tiles = "openstreetmap"
+    )
 
-    m = folium.Map(location=[52.467697, -2.548828], zoom_start=6)
+    def getcolor(feature):
+        if feature['properties']['median'] >= 20.0 and feature['properties']['median'] <= 30.0:
+            return '#ffbd48'
+        if feature['properties']['median'] >= 31.0 and feature['properties']['median'] <= 35.0:
+            return '#ff8548'
+        if feature['properties']['median'] >= 36.0 and feature['properties']['median'] <= 40.0:
+            return '#ff4848'
+        else:
+            return 'transparent'
 
-    polygon_1 = {
-        'type': 'Feature',
-        'geometry': {
-            'type': 'MultiPolygon',
-            'coordinates': [((
-                (-2.548828, 51.467697),
-                (-0.087891, 51.536086),
-                (-1.516113, 53.800651),
-                (-6.240234, 53.383328),
-            ),)],
-        },
-        'properties': {
-            'style': {
-                'color': 'blue',
-            },
-            'times': ['2015-07-22T00:00:00', '2015-08-22T00:00:00',
-                    '2015-09-22T00:00:00', '2015-10-22T00:00:00',
-                    '2015-11-22T00:00:00', '2015-12-22T00:00:00']
-        }
-    }
-
-    polygon_2 = {
-        'type': 'Feature',
-        'geometry': {
-            'type': 'MultiPolygon',
-            'coordinates': [((
-                (-3.548828, 50.467697),
-                (-1.087891, 50.536086),
-                (-2.516113, 52.800651),
-                (-7.240234, 52.383328),
-            ),)],
-        },
-        'properties': {
-            'style': {
-                'color': 'yellow',
-            },
-            'times': ['2015-07-22T00:00:00', '2015-08-22T00:00:00']
-        }
-    }
-
-    plugins.TimestampedGeoJson(
-        {'type': 'FeatureCollection', 'features': [polygon_1, polygon_2]},
-        period='P1M',
-        duration='P1M',
-        auto_play=False,
-        loop=False,
-        loop_button=True,
-        date_options='YYYY/MM/DD',
+    folium.GeoJson(mediambiente, 
+                    name="Temperatura",
+                    style_function = lambda feature: {
+                    'fillColor': getcolor(feature),
+                    'weight': 1,
+                    'color': 'black',
+                    'weight': '2',
+                    'fillOpacity': 0.8,},
+                    tooltip = folium.GeoJsonTooltip(fields=["Nom_com", "median"],
+                    aliases = ['Comuna', 'Temperatura'],
+                    )
     ).add_to(m)
+
+    template = """
+    {% macro html(this, kwargs) %}
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dataintelligence</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+    $( function() {
+        $( "#maplegend" ).draggable({
+                        start: function (event, ui) {
+                            $(this).css({
+                                right: "auto",
+                                top: "auto",
+                                bottom: "auto"
+                            });
+                        }
+                    });
+    });
+
+    </script>
+    </head>
+    <body>
+
+    
+    <div id='maplegend' class='maplegend' 
+        style='position: absolute; z-index:9999; border:2px solid grey; background-color:rgba(255, 255, 255, 0.8);
+        border-radius:6px; padding: 10px; font-size:14px; right: 20px; bottom: 20px;'>
+        
+    <div class='legend-title'>Temperatura</div>
+    <div class='legend-scale'>
+    <ul class='legend-labels'>
+        <li><span style='background:#ffbd48;opacity:0.7;'></span>20° - 30°</li>
+        <li><span style='background:#ff8548;opacity:0.7;'></span>31° -35°</li>
+        <li><span style='background:#ff4848;opacity:0.7;'></span>36° - 40°</li>
+
+    </ul>
+    </div>
+    </div>
+    
+    </body>
+    </html>
+
+    <style type='text/css'>
+    .maplegend .legend-title {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 90%;
+        }
+    .maplegend .legend-scale ul {
+        margin: 0;
+        margin-bottom: 5px;
+        padding: 0;
+        float: left;
+        list-style: none;
+        }
+    .maplegend .legend-scale ul li {
+        font-size: 80%;
+        list-style: none;
+        margin-left: 0;
+        line-height: 18px;
+        margin-bottom: 2px;
+        }
+    .maplegend ul.legend-labels li span {
+        display: block;
+        float: left;
+        height: 16px;
+        width: 30px;
+        margin-right: 5px;
+        margin-left: 0;
+        border: 1px solid #999;
+        }
+    .maplegend .legend-source {
+        font-size: 80%;
+        color: #777;
+        clear: both;
+        }
+    .maplegend a {
+        color: #777;
+        }
+    </style>
+    {% endmacro %}"""
+
+    macro = MacroElement()
+    macro._template = Template(template)
+
+    m.get_root().add_child(macro)
 
     return m._repr_html_()
 
