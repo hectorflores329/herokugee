@@ -21,21 +21,21 @@ def mapa():
         control_scale=True
     )
 
-    folium.Marker(
+    folium.CircleMarker(
         location=[-32.41681831859102, -70.57579231998415],
         popup=folium.Popup(max_width=450).add_child(
             folium.Vega(vis1, width=450, height=250)
         ),
     ).add_to(m)
 
-    folium.Marker(
+    folium.CircleMarker(
         location=[-35.346523319705604, -71.34401806293496],
         popup=folium.Popup(max_width=450).add_child(
             folium.Vega(vis2, width=450, height=250)
         ),
     ).add_to(m)
 
-    folium.Marker(
+    folium.CircleMarker(
         location=[-37.3530323621873, -72.25758381593647],
         popup=folium.Popup(max_width=450).add_child(
             folium.Vega(vis3, width=450, height=250)
