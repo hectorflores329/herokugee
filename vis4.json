@@ -2,12 +2,12 @@
   "axes": [
     {
       "scale": "x",
-      "title": "Wind Speed (m/s)",
+      "title": "Temperatura en la comuna de Santiago durante los años 2018-2020",
       "type": "x"
     },
     {
       "scale": "y",
-      "title": "# of Obs",
+      "title": "Porcentaje de calor °C",
       "type": "y"
     }
   ],
@@ -17,18 +17,18 @@
       "values": [
         {
           "col": "data",
-          "idx": 0,
-          "val": 85
+          "idx": 2018,
+          "val": 25
         },
         {
           "col": "data",
-          "idx": 1,
-          "val": 251
+          "idx": 2019,
+          "val": 32
         },
         {
           "col": "data",
-          "idx": 2,
-          "val": 389
+          "idx": 2020,
+          "val": 30
         }
       ]
     },
@@ -133,5 +133,5 @@
       "type": "ordinal"
     }
   ],
-  "width": 400
+  "width": 100
 }
