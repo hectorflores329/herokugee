@@ -14,7 +14,7 @@ def mapa():
     vis1 = json.loads(requests.get(f"{url}/vis1.json").text)
     vis2 = json.loads(requests.get(f"{url}/vis2.json").text)
     vis3 = json.loads(requests.get(f"{url}/vis3.json").text)
-    vis3 = json.loads(requests.get(f"{url}/vis4.json").text)
+    vis4 = json.loads(requests.get(f"{url}/vis4.json").text)
 
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
@@ -54,7 +54,7 @@ def mapa():
         fill=True,
         radius=8,
         popup=folium.Popup(max_width=450).add_child(
-            folium.Vega(vis3, width=450, height=250)
+            folium.Vega(vis4, width=450, height=250)
         ),
     ).add_to(m)
 
