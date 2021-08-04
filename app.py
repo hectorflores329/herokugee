@@ -8,12 +8,39 @@ app = Flask(__name__)
 @app.route('/')
 def mapa():
     
-    
+    url = (
+        "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data"
+    )
+    vis1 = json.loads(requests.get(f"{url}/vis1.json").text)
+    vis2 = json.loads(requests.get(f"{url}/vis2.json").text)
+    vis3 = json.loads(requests.get(f"{url}/vis3.json").text)
+
     m = folium.Map(
         location=[-33.48621795345005, -70.66557950912359],
         zoom_start=8,
         control_scale=True
     )
+
+    folium.Marker(
+        location=[-32.41681831859102, -70.57579231998415],
+        popup=folium.Popup(max_width=450).add_child(
+            folium.Vega(vis1, width=450, height=250)
+        ),
+    ).add_to(m)
+
+    folium.Marker(
+        location=[-35.346523319705604, -71.34401806293496],
+        popup=folium.Popup(max_width=450).add_child(
+            folium.Vega(vis2, width=450, height=250)
+        ),
+    ).add_to(m)
+
+    folium.Marker(
+        location=[-37.3530323621873, -72.25758381593647],
+        popup=folium.Popup(max_width=450).add_child(
+            folium.Vega(vis3, width=450, height=250)
+        ),
+    ).add_to(m)
 
     return m._repr_html_()
 
