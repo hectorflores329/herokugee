@@ -9,7 +9,7 @@ app = Flask(__name__)
 def mapa():
     
     url = (
-        "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data"
+        "https://raw.githubusercontent.com/hectorflores329/herokugee/main"
     )
     vis1 = json.loads(requests.get(f"{url}/vis1.json").text)
     vis2 = json.loads(requests.get(f"{url}/vis2.json").text)
