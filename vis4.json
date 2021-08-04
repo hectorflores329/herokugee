@@ -17,17 +17,17 @@
       "values": [
         {
           "col": "data",
-          "idx": 0,
+          "idx": 2018,
           "val": 28
         },
         {
           "col": "data",
-          "idx": 1,
+          "idx": 2019,
           "val": 32
         },
         {
           "col": "data",
-          "idx": 2,
+          "idx": 2020,
           "val": 50
         }
       ]
