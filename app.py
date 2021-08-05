@@ -7,14 +7,9 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
-    
     _map = folium.Map(
-        location=[40.712776, -74.005974],
-        zoom_start=5,
-        width = 850,
-        height = 650,
-        min_zoom = 8,
-        max_zoom = 14
+        location=[-33.467890412071654, -70.66557950912359],
+        zoom_start=4,
         )
 
     return _map._repr_html_()
