@@ -1,4 +1,5 @@
 from flask import Flask
+from folium.map import FeatureGroup, Popup
 import pandas as pd
 import folium
 
@@ -25,6 +26,13 @@ def temp():
         location=[-33.467890412071654, -70.66557950912359],
         zoom_start=4,
         )
+
+    _featureGroup = folium.FeatureGroup(name="Puntos de temperatura")
+    marcadores = folium.MarkerCluster(locations = locations, popups = id)
+    marcadores.add_to(_featureGroup)
+
+    _map.add_child(_featureGroup)
+    folium.LayerControl().add_to(_map)
 
     return _map._repr_html_()
 
