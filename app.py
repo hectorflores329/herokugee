@@ -27,12 +27,6 @@ def temp():
         zoom_start=4,
         )
 
-    # _featureGroup = folium.FeatureGroup(name="Puntos de temperatura")
-    folium.MarkerCluster(locations = locations, popups = id).add_to(_map)
-
-
-    # _map.add_child(_featureGroup)
-    # folium.LayerControl().add_to(_map)
 
     return _map._repr_html_()
 
