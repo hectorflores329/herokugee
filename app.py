@@ -16,6 +16,11 @@ def temp():
 
     locations = []
 
+    for lat, lon in zip(latitude, longitude):
+        fLat = float(lat)
+        fLon = float(lon)
+        locations.append([lat,lon])
+
     _map = folium.Map(
         location=[-33.467890412071654, -70.66557950912359],
         zoom_start=4,
