@@ -28,10 +28,10 @@ def temp():
         )
 
     folium.CircleMarker(
-        location=locations,
+        locations=locations,
         fill=True,
         radius=8,
-        popup=id,
+        popups=id,
     ).add_to(_map)
 
     return _map._repr_html_()
