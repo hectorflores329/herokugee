@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
-    puntos = "https://github.com/hectorflores329/herokugee/raw/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.xlsx"
-    df = pd.read_excel(puntos)
+    puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
+    df = pd.read_csv(puntos)
 
     _map = folium.Map(
         location=[-33.467890412071654, -70.66557950912359],
