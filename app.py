@@ -35,7 +35,7 @@ def temp():
         location=[-33.467890412071654, -70.66557950912359],
         zoom_start=10,
     )
-
+    texto = "Este es un texto python"
     html="""
     <style>
         h1{
@@ -45,7 +45,7 @@ def temp():
     
     <h1> This is a big popup</h1><br>
         <p>
-        """ + 123 + """
+        """ + texto + """
     </p>
     """
     iframe = folium.IFrame(html=html, width=200, height=100)
