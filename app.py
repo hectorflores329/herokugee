@@ -17,12 +17,18 @@ def temp():
 
     locations = []
 
-    latlon = [ (51.249443914705175, -0.13878830247011467), (51.249443914705175, -0.13878830247011467), (51.249768239976866, -2.8610415615063034), (52.249768239976866, -2.8610415615063034), (54.249768239976866, -2.8610415615063034)]
-    mapit = folium.Map( location=[52.667989, -1.464582], zoom_start=6 )
-    for coord in latlon:
-        folium.CircleMarker( location=[ coord[0], coord[1] ], fill_color='#43d9de', radius=8, popup="Hola" ).add_to( mapit )
+    for lat, lon in zip(latitude, longitude):
+        fLat = float(lat)
+        fLon = float(lon)
+        locations.append((lat,lon))
 
-    return mapit._repr_html_()
+    _map = folium.Map(
+        location=[-33.467890412071654, -70.66557950912359],
+        zoom_start=4,
+    )
+
+
+    return _map._repr_html_()
 
 if __name__ == '__main__':
     app.run()
