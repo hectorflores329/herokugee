@@ -22,14 +22,14 @@ def temp():
 
     latitude = df["latitude"].tolist()
     longitude = df["longitude"].tolist()
-    id = df["Parcela_ID"].tolist()
+    nomCom = df["NOM_COMUNA"].tolist()
 
     locations = []
 
     for lat, lon in zip(latitude, longitude):
         fLat = float(lat)
         fLon = float(lon)
-        locations.append((lat,lon))
+        locations.append((lat, lon, nomCom))
 
     _map = folium.Map(
         location=[-33.467890412071654, -70.66557950912359],
@@ -37,7 +37,7 @@ def temp():
     )
 
     for coord in locations:
-        folium.CircleMarker(location=[coord[0], coord[1] ], fill_color='#43d9de', radius=8, popup="Hola").add_to(_map)
+        folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2]).add_to(_map)
 
     return _map._repr_html_()
 
