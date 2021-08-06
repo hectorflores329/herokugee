@@ -36,6 +36,14 @@ def temp():
         zoom_start=10,
     )
 
+    html="""
+    <h1> This is a big popup</h1><br>
+        <p>
+        With a few lines of code...
+    </p>
+    """
+    iframe = folium.element.IFrame(html=html, width=500, height=300)
+
     for coord in locations:
         folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
 
