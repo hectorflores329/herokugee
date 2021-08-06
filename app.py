@@ -40,10 +40,46 @@ def temp():
     
     for coord in locations:
         html="""
+        
         <style>
-            h1{
-                color:yellow;
+
+            .chart-wrap {
+                --chart-width:420px;
+                --grid-color:#aaa;
+                --bar-color:#F16335;
+                --bar-thickness:40px;
+                --bar-rounded: 3px;
+                --bar-spacing:10px;
+                font-family:sans-serif;
+                width:var(--chart-width);
             }
+
+            .chart-wrap.horizontal .grid{
+                transform:rotate(-90deg);
+            }
+
+            .chart-wrap.horizontal .bar::after{
+                transform: rotate(45deg);
+                padding-top:0px;
+                display: block;
+            }
+
+            .chart-wrap .bar {
+                width: var(--bar-value);
+                height:var(--bar-thickness);
+                margin:var(--bar-spacing) 0;
+                background-color:var(--bar-color);
+                border-radius:0 var(--bar-rounded) var(--bar-rounded) 0;
+            }
+        
+            .chart-wrap .bar::after{
+                content:attr(data-name);
+                margin-left:100%;
+                padding:10px;
+                display:inline-block;
+                white-space:nowrap;
+            }
+
         </style>
 
         <div>
