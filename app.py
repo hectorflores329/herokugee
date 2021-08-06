@@ -97,7 +97,7 @@ def temp():
         </div>
 
         """
-        iframe = folium.IFrame(html=html, width=300, height=220)
+        iframe = folium.IFrame(html=html, width=350, height=220)
 
         # folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
         folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=folium.Popup(iframe)).add_to(_map)
