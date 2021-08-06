@@ -25,18 +25,14 @@ def temp():
     _map = folium.Map(
         location=[-33.467890412071654, -70.66557950912359],
         zoom_start=4,
-    )
-
-    for _lat, _lon, _id in zip(latitude, longitude, id):
-        fLat = float(_lat)
-        fLon = float(_lon)
-
-        folium.CircleMarker(
-            location=[fLat, fLon],
-            fill=True,
-            radius=8,
-            popup=_id,
-        ).add_to(_map)
+        )
+    
+    folium.CircleMarker(
+        location=[-32.41681831859102, -70.57579231998415],
+        fill=True,
+        radius=8,
+        popup="Hola",
+    ).add_to(_map)
 
     return _map._repr_html_()
 
