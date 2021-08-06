@@ -84,18 +84,17 @@ def temp():
 
         <div>
             <p>""" + coord[2][0] + """</p>
+            <div></div>
+            <br>
             <div>
-                <br>
-                <div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                    <div><p>Este es un párrafo en un div.</p></div>
-                </div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
+                <div><p>Este es un párrafo en un div.</p></div>
             </div>
         </div>
 
