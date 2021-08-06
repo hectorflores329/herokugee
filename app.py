@@ -17,6 +17,8 @@ def temp():
 
     locations = []
     
+    _locations = df[['latitude', 'longitude']]
+    locationlist = _locations.values.tolist()
 
     for lat, lon in zip(latitude, longitude):
         fLat = float(lat)
