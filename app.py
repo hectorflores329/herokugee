@@ -47,9 +47,9 @@ def temp():
                 --chart-width:220px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
-                --bar-thickness:40px;
+                --bar-thickness:20px;
                 --bar-rounded: 3px;
-                --bar-spacing:10px;
+                --bar-spacing:3px;
                 font-family:sans-serif;
                 width:var(--chart-width);
             }
