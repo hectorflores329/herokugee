@@ -83,8 +83,7 @@ def temp():
         </style>
 
         <div>
-            <p>""" + coord[2][0] + """</p>
-            <div></div>
+            <div><p>""" + coord[2][0] + """</p></div>
             <br>
             <div>
                 <div><p>Este es un párrafo en un div.</p></div>
