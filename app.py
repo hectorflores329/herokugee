@@ -17,6 +17,9 @@ def temp():
 
     locations = []
 
+    _locations = df[['latitude', 'longitude']]
+    _locationlist = _locations.values.tolist()
+
     for lat, lon in zip(latitude, longitude):
         fLat = float(lat)
         fLon = float(lon)
@@ -27,12 +30,9 @@ def temp():
         zoom_start=4,
         )
     
-    folium.CircleMarker(
-        location=([-32.41681831859102, -70.57579231998415], [-33.41681831859102, -70.57579231998415]),
-        fill=True,
-        radius=8,
-        popup="TE AMO ♥",
-    ).add_to(_map)
+    for point in range(0, len(_locationlist)):
+        folium.Marker(_locationlist[point], popup="TE AMO ♥").add_to(_map)
+
 
     return _map._repr_html_()
 
