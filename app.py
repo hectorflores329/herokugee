@@ -85,7 +85,7 @@ def temp():
         <div class="chart-wrap horizontal">
             <div class="title">""" + coord[2][0] + """</div>
             <div class="grid">
-                <div>class="bar" style="--bar-value:85%;" data-name="Your Blog" title="Your Blog 85%"</div>
+                <div class="bar" style="--bar-value:85%;" data-name="Your Blog" title="Your Blog 85%"></div>
                 <div></div>
                 <div></div>
                 <div></div>
