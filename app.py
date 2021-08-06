@@ -85,14 +85,14 @@ def temp():
         <div class="chart-wrap horizontal">
             <div class="title">""" + coord[2][0] + """</div>
             <div class="grid">
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
-                <div><p>Este es un párrafo en un div.</p></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
 
