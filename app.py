@@ -47,7 +47,7 @@ def temp():
                 --chart-width:220px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
-                --bar-thickness:20px;
+                --bar-thickness:30px;
                 --bar-rounded: 3px;
                 --bar-spacing:3px;
                 font-family:sans-serif;
@@ -97,7 +97,7 @@ def temp():
         </div>
 
         """
-        iframe = folium.IFrame(html=html, width=350, height=220)
+        iframe = folium.IFrame(html=html, width=350, height=250)
 
         # folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
         folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=folium.Popup(iframe)).add_to(_map)
