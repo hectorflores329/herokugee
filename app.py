@@ -9,9 +9,12 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
-    comuna = request.args.get("comuna")
-    comuna = int(comuna)
-    
+    try:
+        comuna = request.args.get("comuna")
+        comuna = int(comuna)
+    except:
+        comuna = 0
+
     puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
     df = pd.read_csv(puntos)
 
