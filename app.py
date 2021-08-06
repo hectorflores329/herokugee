@@ -37,7 +37,7 @@ def temp():
     )
 
     for coord in locations:
-        folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup="<p style='color:#f00;background:#fff;'>HOLA</p>").add_to(_map)
+        folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup="<p style='color:#f00;background:#000;'>" + coord[2][0] + "</p>").add_to(_map)
 
     return _map._repr_html_()
 
