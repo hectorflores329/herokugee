@@ -10,7 +10,8 @@ app = Flask(__name__)
 def temp():
 
     comuna = request.args.get("comuna")
-
+    comuna = int(comuna)
+    
     puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
     df = pd.read_csv(puntos)
 
