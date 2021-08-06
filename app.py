@@ -44,7 +44,7 @@ def temp():
         <style>
 
             .chart-wrap {
-                --chart-width:420px;
+                --chart-width:220px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
                 --bar-thickness:40px;
@@ -85,14 +85,14 @@ def temp():
         <div class="chart-wrap horizontal">
             <div class="title">""" + coord[2][0] + """</div>
             <div class="grid">
-                <div class="bar" style="--bar-value:85%;" data-name="Your Blog" title="Your Blog 85%"></div>
-                <div class="bar" style="--bar-value:23%;" data-name="Medium" title="Medium 23%"></div>
-                <div class="bar" style="--bar-value:7%;" data-name="Tumblr" title="Tumblr 7%"></div>
-                <div class="bar" style="--bar-value:38%;" data-name="Facebook" title="Facebook 38%"></div>
-                <div class="bar" style="--bar-value:35%;" data-name="YouTube" title="YouTube 35%"></div>
-                <div class="bar" style="--bar-value:30%;" data-name="LinkedIn" title="LinkedIn 30%"></div>
-                <div class="bar" style="--bar-value:5%;" data-name="Twitter" title="Twitter 5%"></div>
-                <div class="bar" style="--bar-value:20%;" data-name="Other" title="Other 20%"></div>
+                <div class="bar" style="--bar-value:85%;" data-name="2014" title="2014 85%"></div>
+                <div class="bar" style="--bar-value:23%;" data-name="2015" title="2015 23%"></div>
+                <div class="bar" style="--bar-value:7%;" data-name="2016" title="2016 7%"></div>
+                <div class="bar" style="--bar-value:38%;" data-name="2017" title="2017 38%"></div>
+                <div class="bar" style="--bar-value:35%;" data-name="2018" title="2018 35%"></div>
+                <div class="bar" style="--bar-value:30%;" data-name="2019" title="2019 30%"></div>
+                <div class="bar" style="--bar-value:5%;" data-name="2020" title="2020 5%"></div>
+                <div class="bar" style="--bar-value:20%;" data-name="2021" title="2021 20%"></div>
             </div>
         </div>
 
