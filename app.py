@@ -38,6 +38,9 @@ def temp():
 
     texto1 = "2020"
     valor1 = "35"
+
+    texto2 = "2021111"
+    valor2 = "90"
     
     for coord in locations:
         html="""
@@ -88,13 +91,13 @@ def temp():
             <br>
             <div class="grid">
                 <div class='bar' style='--bar-value:""" + valor1 + """%;' data-name='2014' title='""" + texto1 +""" 85%'></div>
-                <div class='bar' style='--bar-value:23%;' data-name='2015' title='2015 23%'></div>
+                <div class='bar' style='--bar-value:%;' data-name='2015' title='2015 23%'></div>
                 <div class='bar' style='--bar-value:7%;' data-name='2016' title='2016 7%'></div>
                 <div class='bar' style='--bar-value:38%;' data-name='2017' title='2017 38%'></div>
                 <div class='bar' style='--bar-value:35%;' data-name='2018' title='2018 35%'></div>
                 <div class='bar' style='--bar-value:30%;' data-name='2019' title='2019 30%'></div>
                 <div class='bar' style='--bar-value:5%;' data-name='2020' title='2020 5%'></div>
-                <div class='bar' style='--bar-value:20%;' data-name='2021' title='2021 20%'></div>
+                <div class='bar' style='--bar-value:""" + valor2 + """%;' data-name='2021' title='""" + texto2 +""" 20%'></div>
             </div>
         </div>
 
