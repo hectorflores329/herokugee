@@ -35,22 +35,24 @@ def temp():
         location=[-33.467890412071654, -70.66557950912359],
         zoom_start=10,
     )
-    texto = "Este es un texto python"
-    html="""
-    <style>
-        h1{
-            color:yellow;
-        }
-    </style>
     
-    <h1> This is a big popup</h1><br>
-        <p>
-        """ + texto + """
-    </p>
-    """
-    iframe = folium.IFrame(html=html, width=200, height=100)
-
+    texto = "Este es un texto python"
+    
     for coord in locations:
+        html="""
+        <style>
+            h1{
+                color:yellow;
+            }
+        </style>
+
+        <h1> This is a big popup</h1><br>
+            <p>
+            %""" + texto + """
+        </p>
+        """
+        iframe = folium.IFrame(html=html, width=200, height=100)
+
         # folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
         folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=folium.Popup(iframe)).add_to(_map)
 
