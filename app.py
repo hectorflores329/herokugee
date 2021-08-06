@@ -24,7 +24,7 @@ def temp():
 
     _map = folium.Map(
         location=[-33.467890412071654, -70.66557950912359],
-        zoom_start=4,
+        zoom_start=7,
     )
 
     for coord in locations:
