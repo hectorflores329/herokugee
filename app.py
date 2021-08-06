@@ -42,9 +42,10 @@ def temp():
             color:yellow;
         }
     </style>
+    
     <h1> This is a big popup</h1><br>
         <p>
-        With a few lines of code...
+        """ + print("Hola") + """
     </p>
     """
     iframe = folium.IFrame(html=html, width=200, height=100)
