@@ -62,10 +62,6 @@ def temp():
             </div>
         </div>
 
-        <h1> This is a big popup</h1><br>
-        <p>
-            """ + coord[2][0] + """
-        </p>
         """
         iframe = folium.IFrame(html=html, width=300, height=220)
 
