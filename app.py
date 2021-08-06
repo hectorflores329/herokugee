@@ -32,8 +32,9 @@ def temp():
         locations.append((lat, lon, nomCom))
 
     _map = folium.Map(
-        location=[-33.467890412071654, -70.66557950912359],
-        zoom_start=10,
+        # location=[-33.467890412071654, -70.66557950912359],
+        location=[float(latitude[0]), float(longitude[0])],
+        zoom_start=13,
     )
 
     texto1 = "2020"
@@ -63,7 +64,7 @@ def temp():
             }
 
             .chart-wrap.horizontal .bar::after{
-                transform: rotate(45deg);
+                transform: rotate(60deg);
                 padding-top:0px;
                 display: block;
             }
