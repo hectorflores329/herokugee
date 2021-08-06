@@ -36,7 +36,8 @@ def temp():
         zoom_start=10,
     )
 
-    texto = "Este es un texto python"
+    texto1 = "2020"
+    valor1 = "35"
     
     for coord in locations:
         html="""
@@ -86,19 +87,19 @@ def temp():
             <div class="title">""" + coord[2][0] + """</div>
             <br>
             <div class="grid">
-                <div class="bar" style="--bar-value:85%;" data-name="2014" title="2014 85%"></div>
-                <div class="bar" style="--bar-value:23%;" data-name="2015" title="2015 23%"></div>
-                <div class="bar" style="--bar-value:7%;" data-name="2016" title="2016 7%"></div>
-                <div class="bar" style="--bar-value:38%;" data-name="2017" title="2017 38%"></div>
-                <div class="bar" style="--bar-value:35%;" data-name="2018" title="2018 35%"></div>
-                <div class="bar" style="--bar-value:30%;" data-name="2019" title="2019 30%"></div>
-                <div class="bar" style="--bar-value:5%;" data-name="2020" title="2020 5%"></div>
-                <div class="bar" style="--bar-value:20%;" data-name="2021" title="2021 20%"></div>
+                <div class='bar' style='--bar-value:85%;' data-name='2014' title='2014 85%'></div>
+                <div class='bar' style='--bar-value:23%;' data-name='2015' title='2015 23%'></div>
+                <div class='bar' style='--bar-value:7%;' data-name='2016' title='2016 7%'></div>
+                <div class='bar' style='--bar-value:38%;' data-name='2017' title='2017 38%'></div>
+                <div class='bar' style='--bar-value:35%;' data-name='2018' title='2018 35%'></div>
+                <div class='bar' style='--bar-value:30%;' data-name='2019' title='2019 30%'></div>
+                <div class='bar' style='--bar-value:5%;' data-name='2020' title='2020 5%'></div>
+                <div class='bar' style='--bar-value:20%;' data-name='2021' title='2021 20%'></div>
             </div>
         </div>
 
         """
-        iframe = folium.IFrame(html=html, width=350, height=250)
+        iframe = folium.IFrame(html=html, width=350, height=300)
 
         # folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
         folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=folium.Popup(iframe)).add_to(_map)
