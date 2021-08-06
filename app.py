@@ -30,12 +30,10 @@ def temp():
         zoom_start=4,
     )
     
-    folium.CircleMarker(
-        location=[-32.41681831859102, -70.57579231998415],
-        fill=True,
-        radius=8,
-        popup="TE AMO",
-    ).add_to(_map)
+    for point in range(0, len(locationlist)):
+        folium.Marker(locationlist[point], popup="df_counters['Name'][point]").add_to(_map)
+
+
 
     return _map._repr_html_()
 
