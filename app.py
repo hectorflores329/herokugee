@@ -47,7 +47,12 @@ def temp():
         </style>
 
         <div>
-            <div><p>Este es un párrafo en un div.</p></div>
+            <div>
+                <br>
+                <div>
+                    <div><p>Este es un párrafo en un div.</p></div>
+                </div>
+            </div>
         </div>
 
         <h1> This is a big popup</h1><br>
