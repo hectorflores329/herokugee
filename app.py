@@ -42,7 +42,7 @@ def temp():
         With a few lines of code...
     </p>
     """
-    iframe = folium.element.IFrame(html=html, width=500, height=300)
+    # iframe = folium.IFrame(html=html, width=200, height=100)
 
     for coord in locations:
         folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
