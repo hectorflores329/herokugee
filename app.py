@@ -33,7 +33,7 @@ def temp():
 
     _map = folium.Map(
         # location=[-33.467890412071654, -70.66557950912359],
-        location=[float(df["latitude"][0]), float(df["longitude"][0])],
+        location=[locations[0][0], locations[0][1]],
         zoom_start=13,
     )
 
