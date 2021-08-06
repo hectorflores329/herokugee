@@ -40,22 +40,16 @@ def temp():
     
     for coord in locations:
         html="""
-        <div>
-        <div>TEMPERATURA: """ + coord[2] + """</div>
-            <br>
-            <div>
+        <style>
+            h1{
+                color:yellow;
+            }
+        </style>
 
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            
-            </div>
-        </div>
+        <h1> This is a big popup</h1><br>
+        <p>
+            """ + coord[2][0] + """
+        </p>
         """
         iframe = folium.IFrame(html=html, width=200, height=100)
 
