@@ -10,12 +10,11 @@ app = Flask(__name__)
 def temp():
 
     comuna = request.args.get("comuna")
-    comuna = comuna
 
     puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
     df = pd.read_csv(puntos)
 
-    df = df[df["COMUNA"] == 13101]
+    df = df[df["COMUNA"] == comuna]
 
     latitude = df["latitude"].tolist()
     longitude = df["longitude"].tolist()
