@@ -47,6 +47,7 @@ def temp():
         </style>
 
         <div>
+            <p>""" + coord[2][0] + """</p>
             <div>
                 <br>
                 <div>
