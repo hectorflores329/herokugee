@@ -16,7 +16,7 @@ def temp():
         comuna = int(comuna)
     except:
         comuna = 13101
-        locations = [-33.467890412071654, -70.66557950912359]
+        locations = [(-33.467890412071654, -70.66557950912359)]
 
     puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
     df = pd.read_csv(puntos)
