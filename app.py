@@ -9,13 +9,11 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
-    locations = []
-
     try:
         comuna = request.args.get("comuna")
         comuna = int(comuna)
     except:
-        comuna = 0
+        comuna = 13101
 
     puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
     df = pd.read_csv(puntos)
@@ -26,6 +24,8 @@ def temp():
     longitude = df["longitude"].tolist()
     nomCom = df["NOM_COMUNA"].tolist()
 
+    locations = []
+
     for lat, lon in zip(latitude, longitude):
         fLat = float(lat)
         fLon = float(lon)
@@ -34,7 +34,7 @@ def temp():
     _map = folium.Map(
         # location=[-33.467890412071654, -70.66557950912359],
         location=[float(df["latitude"][0]), float(df["longitude"][1])],
-        zoom_start=11,
+        zoom_start=13,
     )
 
     texto1 = "2020"
