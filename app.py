@@ -31,9 +31,13 @@ def temp():
         fLon = float(lon)
         locations.append((lat, lon, nomCom))
 
+    if (comuna == 0):
+        ubicacion = [-33.467890412071654, -70.66557950912359]
+    else:
+        ubicacion = [locations[0][0], locations[0][1]]
+    
     _map = folium.Map(
-        # location=[-33.467890412071654, -70.66557950912359],
-        location=[locations[0][0], locations[0][1]],
+        location=ubicacion,
         zoom_start=13,
     )
 
