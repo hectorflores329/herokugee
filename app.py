@@ -13,7 +13,7 @@ def temp():
         comuna = request.args.get("comuna")
         comuna = int(comuna)
     except:
-        comuna = 13101
+        comuna = 0
 
     puntos = "https://raw.githubusercontent.com/hectorflores329/herokugee/main/Regi%C3%B3n%20Metropolitana%20de%20Santiago%2C%20TEMP.csv"
     df = pd.read_csv(puntos)
@@ -33,7 +33,7 @@ def temp():
 
     _map = folium.Map(
         # location=[-33.467890412071654, -70.66557950912359],
-        location=[float(df["latitude"][0]), float(df["longitude"][1])],
+        location=[float(df["latitude"][0][0]), float(df["longitude"][0][1])],
         zoom_start=13,
     )
 
