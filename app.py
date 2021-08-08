@@ -15,7 +15,7 @@ def temp():
     except:
         comuna = 0
 
-    puntos = "http://ide.dataintelligence-group.com/mapasdi/Regi%c3%b3n%20Metropolitana%20de%20Santiago,%20TEMP.csv"
+    puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura.csv"
     df = pd.read_csv(puntos)
 
     df = df[df["COMUNA"] == comuna]
