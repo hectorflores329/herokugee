@@ -34,11 +34,11 @@ def temp():
     if (comuna == 0):
         ubicacion = [-33.467890412071654, -70.66557950912359]
     else:
-        ubicacion = [locations[0][0], locations[0][1]]
+        ubicacion = [locations[0][0], locations[0][-1]]
     
     _map = folium.Map(
         location=ubicacion,
-        zoom_start=13,
+        zoom_start=11,
     )
 
     texto1 = "2020"
