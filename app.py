@@ -95,20 +95,35 @@ def temp():
 
         </style>
 
-        <div class="chart-wrap horizontal">
-            <div class="title">""" + df["NOM_COMUNA"][i] + """</div>
-            <br>
-            <div class="grid">
-                <div class='bar' style='--bar-value:""" + valor1 + """%;' data-name='""" + texto1 +"""' title='""" + texto1 +""" 85%'></div>
-                <div class='bar' style='--bar-value:%;' data-name='2015' title='2015 23%'></div>
-                <div class='bar' style='--bar-value:7%;' data-name='2016' title='2016 7%'></div>
-                <div class='bar' style='--bar-value:38%;' data-name='2017' title='2017 38%'></div>
-                <div class='bar' style='--bar-value:35%;' data-name='2018' title='2018 35%'></div>
-                <div class='bar' style='--bar-value:30%;' data-name='2019' title='2019 30%'></div>
-                <div class='bar' style='--bar-value:5%;' data-name='2020' title='2020 5%'></div>
-                <div class='bar' style='--bar-value:""" + valor2 + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-            </div>
+        <div class="container">
+
+    <div class="line-chart-block block">
+     <div class="line-chart">
+       <div class='grafico'>
+       <ul class='eje-y'>
+         <li data-ejeY='50'></li>
+         <li data-ejeY='20'></li>
+         <li data-ejeY='10'></li>
+         <li data-ejeY='0'></li>
+       </ul>
+       <ul class='eje-x'>
+         <li>Apr</li>
+         <li>May</li>
+         <li>Jun</li>
+       </ul>
+         <span data-valor='25'>
+           <span data-valor='8'>
+             <span data-valor='13'>
+               <span data-valor='5'>   
+                 <span data-valor='23'>   
+                 <span data-valor='12'>
+                     <span data-valor='15'>
+                     </span></span></span></span></span></span></span>
         </div>
+       
+     </div>
+                    
+    </div>
 
         """
         iframe = folium.IFrame(html=html, width=350, height=350)
