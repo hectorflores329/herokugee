@@ -99,18 +99,18 @@ def temp():
             <div class="title">""" + df["NOM_COMUNA"][i] + """</div>
             <br>
             <div class="grid">
-                <div class='bar' style='--bar-value:""" + str(df["2020_01"][i]) + """%;' data-name='"""+ str(df["2020_01"][i]) + """' title='"""+ str(round(float(df["2020_01"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_02"][i]) + """%;' data-name='""" + str(df["2020_02"][i]) + """' title='""" + str(round(float(df["2020_02"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_03"][i]) + """%;' data-name='""" + str(df["2020_03"][i]) + """' title='""" + str(round(float(df["2020_03"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_04"][i]) + """%;' data-name='""" + str(df["2020_04"][i]) + """' title='""" + str(round(float(df["2020_04"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_05"][i]) + """%;' data-name='""" + str(df["2020_05"][i]) + """' title='""" + str(round(float(df["2020_05"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_06"][i]) + """%;' data-name='""" + str(df["2020_06"][i]) + """' title='""" + str(round(float(df["2020_06"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_07"][i]) + """%;' data-name='""" + str(df["2020_07"][i]) + """' title='""" + str(round(float(df["2020_07"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_08"][i]) + """%;' data-name='""" + str(df["2020_08"][i]) + """' title='""" + str(round(float(df["2020_08"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_09"][i]) + """%;' data-name='""" + str(df["2020_09"][i]) + """' title='""" + str(round(float(df["2020_09"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_10"][i]) + """%;' data-name='""" + str(df["2020_10"][i]) + """' title='""" + str(round(float(df["2020_10"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_11"][i]) + """%;' data-name='""" + str(df["2020_11"][i]) + """' title='""" + str(round(float(df["2020_11"][i])), 2) + """'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_12"][i]) + """%;' data-name='""" + str(df["2020_12"][i]) + """' title='""" + str(round(float(df["2020_12"][i])), 2) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_01"][i]) + """%;' data-name='"""+ str(df["2020_01"][i]) + """' title='"""+ str(round(float(df["2020_01"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_02"][i]) + """%;' data-name='""" + str(df["2020_02"][i]) + """' title='""" + str(round(float(df["2020_02"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_03"][i]) + """%;' data-name='""" + str(df["2020_03"][i]) + """' title='""" + str(round(float(df["2020_03"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_04"][i]) + """%;' data-name='""" + str(df["2020_04"][i]) + """' title='""" + str(round(float(df["2020_04"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_05"][i]) + """%;' data-name='""" + str(df["2020_05"][i]) + """' title='""" + str(round(float(df["2020_05"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_06"][i]) + """%;' data-name='""" + str(df["2020_06"][i]) + """' title='""" + str(round(float(df["2020_06"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_07"][i]) + """%;' data-name='""" + str(df["2020_07"][i]) + """' title='""" + str(round(float(df["2020_07"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_08"][i]) + """%;' data-name='""" + str(df["2020_08"][i]) + """' title='""" + str(round(float(df["2020_08"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_09"][i]) + """%;' data-name='""" + str(df["2020_09"][i]) + """' title='""" + str(round(float(df["2020_09"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_10"][i]) + """%;' data-name='""" + str(df["2020_10"][i]) + """' title='""" + str(round(float(df["2020_10"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_11"][i]) + """%;' data-name='""" + str(df["2020_11"][i]) + """' title='""" + str(round(float(df["2020_11"][i]), 2)) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_12"][i]) + """%;' data-name='""" + str(df["2020_12"][i]) + """' title='""" + str(round(float(df["2020_12"][i]), 2)) + """'></div>
             </div>
         </div>
 
