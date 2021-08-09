@@ -461,19 +461,19 @@ def temp():
             <div class="line-chart">
             <div class='grafico'>
             <ul class='eje-y'>
-                <li data-ejeY='60'></li>
-                <li data-ejeY='50'></li>
-                <li data-ejeY='40'></li>
-                <li data-ejeY='30'></li>
+                <li data-ejeY='30-40'></li>
+                <li data-ejeY='20-30'></li>
+                <li data-ejeY='10-20'></li>
+                <li data-ejeY='0-20'></li>
             </ul>
             <ul class='eje-x'>
                 <li>Ene</li>
                 <li>Feb</li>
                 <li>Mar</li>
             </ul>
-                <span data-valor='25'>
-                    <span data-valor='8'>
-                        <span data-valor='13'>
+                <span data-valor='10'>
+                    <span data-valor='30'>
+                        <span data-valor='18'>
                             </span>
                         </span>
                     </span>
