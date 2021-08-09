@@ -119,7 +119,7 @@ def temp():
                         background: #FFFFFF;
                         border-radius: 5px;
                 float: left;
-                width: 300px;
+                width: 800px;
                 overflow: hidden;
                     }
                     /******************************************** LEFT CONTAINER *****************************************/
@@ -473,32 +473,10 @@ def temp():
                 <li>Ene</li>
                 <li>Feb</li>
                 <li>Mar</li>
-                <li>Abr</li>
-                <li>May</li>
-                <li>Jun</li>
-                <li>Jul</li>
-                <li>Ago</li>
-                <li>Sep</li>
-                <li>Oct</li>
-                <li>Nov</li>
-                <li>Dec</li>
             </ul>
                 <span data-valor='25'>
                     <span data-valor='8'>
                         <span data-valor='13'>
-                            <span data-valor='5'>   
-                                <span data-valor='23'>   
-                                    <span data-valor='12'>
-                                        <span data-valor='15'>
-                                            <span data-valor='15'>
-                                                <span data-valor='15'>
-                                                    <span data-valor='15'>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </span>
                             </span>
                         </span>
                     </span>
