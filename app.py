@@ -99,9 +99,9 @@ def temp():
             <div class="title">""" + df["NOM_COMUNA"][i] + """</div>
             <br>
             <div class="grid">
-                <div class='bar' style='--bar-value:""" + df["2020_01"][i] + """%;' data-name='""" + texto1 +"""' title='""" + texto1 +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_02"][i] + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_03"][i] + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_01"][i]) + """%;' data-name='""" + texto1 +"""' title='""" + texto1 +""" 85%'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_02"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_03"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
             </div>
         </div>
 
