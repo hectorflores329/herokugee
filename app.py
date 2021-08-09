@@ -63,7 +63,7 @@ def temp():
             box-sizing: border-box;  
             }
             body {
-                background: #1f253d;
+                background: #FFFFFF;
             }
 
             ul {
@@ -116,7 +116,7 @@ def temp():
                 }
                     .block {
                         margin: 25px 25px 0 0;
-                        background: #394264;
+                        background: #FFFFFF;
                         border-radius: 5px;
                 float: left;
                 width: 300px;
