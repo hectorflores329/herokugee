@@ -119,7 +119,7 @@ def temp():
                         background: #FFFFFF;
                         border-radius: 5px;
                 float: left;
-                width: 800px;
+                width: 300px;
                 overflow: hidden;
                     }
                     /******************************************** LEFT CONTAINER *****************************************/
@@ -465,9 +465,6 @@ def temp():
                 <li data-ejeY='50'></li>
                 <li data-ejeY='40'></li>
                 <li data-ejeY='30'></li>
-                <li data-ejeY='20'></li>
-                <li data-ejeY='10'></li>
-                <li data-ejeY='0'></li>
             </ul>
             <ul class='eje-x'>
                 <li>Ene</li>
