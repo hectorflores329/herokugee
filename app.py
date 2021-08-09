@@ -15,10 +15,7 @@ def temp():
     except:
         comuna = 0
         
-    if (comuna == 0):
-        puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/13101.csv"
-    else:
-        puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
+    puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
 
     df = pd.read_csv(puntos)
 
