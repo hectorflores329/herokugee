@@ -15,7 +15,7 @@ def temp():
     except:
         comuna = 0
 
-    puntos = "http://ide.dataintelligence-group.com/mapasdi/Regi%c3%b3n%20Metropolitana%20de%20Santiago,%20TEMP.csv"
+    puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
     df = pd.read_csv(puntos)
 
     df = df[df["COMUNA"] == comuna]
@@ -121,7 +121,7 @@ def temp():
                 </svg></div>""")
         ).add_to(_map)
 
-        folium.LayerControl().add_to(_map)
+    folium.LayerControl().add_to(_map)
 
     return _map._repr_html_()
 
