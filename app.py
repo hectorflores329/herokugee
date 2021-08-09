@@ -3,6 +3,7 @@ from folium.map import FeatureGroup, Popup
 import pandas as pd
 import folium
 from flask import request
+from folium.plugins import FastMarkerCluster
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def temp():
     except:
         comuna = 0
 
-    puntos = "http://ide.dataintelligence-group.com/mapasdi/Regi%c3%b3n%20Metropolitana%20de%20Santiago,%20TEMP.csv"
+    puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura_2020.csv"
     df = pd.read_csv(puntos)
 
     df = df[df["COMUNA"] == comuna]
@@ -108,20 +109,10 @@ def temp():
 
         """
         iframe = folium.IFrame(html=html, width=350, height=350)
-        popup = folium.Popup(iframe, max_width=2650)
 
-        folium.Marker(
-        location=[df["latitude"][i],df["longitude"][i]],
-        popup=popup,
-        icon=folium.DivIcon(html=f"""
-                <div><svg>
-                    <circle cx='35' cy='35' r='25' fill='#69b3a2' opacity=".4"/>
-                    <rect x='20', y='20' width='20' height='20', fill='""" + df["Simbología"][i] + """', opacity="1" 
-                </svg></div>""")
-        ).add_to(_map)
-        
         # folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color=df["Simbología"][i], radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
+        _map.add_child(FastMarkerCluster(df["latitude"][i],df["longitude"][i]))
 
     return _map._repr_html_()
 
