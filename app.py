@@ -99,18 +99,8 @@ def temp():
             <div class="title">""" + df["NOM_COMUNA"][i] + """</div>
             <br>
             <div class="grid">
-                <div class='bar' style='--bar-value:""" + df["2020_01"][i] + """%;' data-name='Enero' title='""" + df["2020_01"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_02"][i] + """%;' data-name='Febrero' title='""" + df["2020_02"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_03"][i] + """%;' data-name='Marzo' title='""" + df["2020_03"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_04"][i] + """%;' data-name='Abril' title='""" + df["2020_04"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_05"][i] + """%;' data-name='Mayo' title='""" + df["2020_05"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_06"][i] + """%;' data-name='Junio' title='""" + df["2020_06"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_07"][i] + """%;' data-name='Julio' title='""" + df["2020_07"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_08"][i] + """%;' data-name='Agosto' title='""" + df["2020_08"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_09"][i] + """%;' data-name='Septiembre' title='""" + df["2020_09"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_10"][i] + """%;' data-name='Octubre' title='""" + df["2020_10"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_11"][i] + """%;' data-name='Noviembre' title='""" + df["2020_11"][i] +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + df["2020_12"][i] + """%;' data-name='Diciembre' title='""" + df["2020_12"][i] +""" 85%'></div>
+                <div class='bar' style='--bar-value:""" + valor1 + """%;' data-name='""" + texto1 +"""' title='""" + texto1 +""" 85%'></div>
+                <div class='bar' style='--bar-value:""" + valor2 + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
             </div>
         </div>
 
