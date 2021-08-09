@@ -108,11 +108,13 @@ def temp():
         </div>
 
         """
-        iframe = folium.IFrame(html=html, width=350, height=350)
+        # iframe = folium.IFrame(html=html, width=350, height=350)
 
         # folium.CircleMarker(location=[coord[0], coord[1]], fill_color='#43d9de', radius=8, popup=coord[2][0]).add_to(_map)
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color=df["Simbología"][i], radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
-        _map.add_child(FastMarkerCluster(df["latitude"][i],df["longitude"][i]))
+        
+        FastMarkerCluster(data=list(df["latitude"][i],df["longitude"][i])).add_to(_map)
+        folium.LayerControl().add_to(_map)
 
     return _map._repr_html_()
 
