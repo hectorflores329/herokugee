@@ -119,6 +119,7 @@ def temp():
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
             popup=popup,
+            tooltip=df["2020_12"],
             icon=folium.DivIcon(html=f"""
                 <div><svg>
                     <circle cx='50' cy='50' r='10' fill='""" + df["Simbología"][i] + """' opacity='.9'/> 
