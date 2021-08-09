@@ -122,7 +122,7 @@ def temp():
             tooltip="<strong>Temperatura actual: </strong>" + str(round(float((df["2020_12"][i])), 2)) + "°",
             icon=folium.DivIcon(html=f"""
                 <div><svg>
-                    <circle cx='50' cy='50' r='10' fill='""" + df["Simbología"][i] + """' opacity='.9'/> 
+                    <circle cx='30' cy='30' r='10' fill='""" + df["Simbología"][i] + """' opacity='1'/> 
                 </svg></div>""")
         ).add_to(_map)
 
