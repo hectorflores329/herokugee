@@ -99,18 +99,18 @@ def temp():
             <div class="title">""" + df["NOM_COMUNA"][i] + """</div>
             <br>
             <div class="grid">
-                <div class='bar' style='--bar-value:""" + str(df["2020_01"][i]) + """%;' data-name='""" + texto1 +"""' title='""" + texto1 +""" 85%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_02"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_03"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_04"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_05"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_06"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_07"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_08"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_09"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_10"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_11"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
-                <div class='bar' style='--bar-value:""" + str(df["2020_12"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + texto2 +""" 20%'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_01"][i]) + """%;' data-name='""" + texto1 +"""' title='"""+ str(df["2020_01"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_02"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_02"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_03"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_03"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_04"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_04"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_05"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_05"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_06"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_06"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_07"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_07"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_08"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_08"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_09"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_09"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_10"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_10"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_11"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_11"][i]) + """'></div>
+                <div class='bar' style='--bar-value:""" + str(df["2020_12"][i]) + """%;' data-name='""" + texto2 +"""' title='""" + str(df["2020_12"][i]) + """'></div>
             </div>
         </div>
 
