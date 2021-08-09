@@ -14,8 +14,11 @@ def temp():
         comuna = int(comuna)
     except:
         comuna = 0
-        
-    puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
+
+    if (comuna == 0):
+        puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/13101.csv"
+    else:
+        puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
 
     df = pd.read_csv(puntos)
 
@@ -31,6 +34,11 @@ def temp():
         fLat = float(lat)
         fLon = float(lon)
         locations.append((lat, lon, nomCom))
+
+    if (comuna == 0):
+        ubicacion = [-33.467890412071654, -70.66557950912359]
+    else:
+        ubicacion = [locations[0][0], locations[0][1]]
     
     _map = folium.Map(
         location=ubicacion,
@@ -113,7 +121,7 @@ def temp():
             popup=popup,
             icon=folium.DivIcon(html=f"""
                 <div><svg>
-                    <circle cx='50' cy='50' r='20' fill='#69b3a2' opacity=".9"/> 
+                    <circle cx='50' cy='50' r='20' fill='#69b3a2' opacity='.9'/> 
                 </svg></div>""")
         ).add_to(_map)
 
