@@ -461,7 +461,10 @@ def temp():
             <div class="line-chart">
             <div class='grafico'>
             <ul class='eje-y'>
+                <li data-ejeY='60'></li>
                 <li data-ejeY='50'></li>
+                <li data-ejeY='40'></li>
+                <li data-ejeY='30'></li>
                 <li data-ejeY='20'></li>
                 <li data-ejeY='10'></li>
                 <li data-ejeY='0'></li>
@@ -472,13 +475,19 @@ def temp():
                 <li>Jun</li>
             </ul>
                 <span data-valor='25'>
-                <span data-valor='8'>
-                    <span data-valor='13'>
-                    <span data-valor='5'>   
-                        <span data-valor='23'>   
-                        <span data-valor='12'>
-                            <span data-valor='15'>
-                            </span></span></span></span></span></span></span>
+                    <span data-valor='8'>
+                        <span data-valor='13'>
+                            <span data-valor='5'>   
+                                <span data-valor='23'>   
+                                        <span data-valor='12'>
+                                            <span data-valor='15'>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                </span>
                 </div>
             
             </div>
