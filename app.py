@@ -470,9 +470,18 @@ def temp():
                 <li data-ejeY='0'></li>
             </ul>
             <ul class='eje-x'>
-                <li>Apr</li>
+                <li>Ene</li>
+                <li>Feb</li>
+                <li>Mar</li>
+                <li>Abr</li>
                 <li>May</li>
                 <li>Jun</li>
+                <li>Jul</li>
+                <li>Ago</li>
+                <li>Sep</li>
+                <li>Oct</li>
+                <li>Nov</li>
+                <li>Dec</li>
             </ul>
                 <span data-valor='25'>
                     <span data-valor='8'>
