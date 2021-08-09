@@ -121,7 +121,7 @@ def temp():
             popup=popup,
             icon=folium.DivIcon(html=f"""
                 <div><svg>
-                    <circle cx='50' cy='50' r='20' fill='""" + df["Simbología"][i] + """' opacity='.9'/> 
+                    <circle cx='50' cy='50' r='10' fill='""" + df["Simbología"][i] + """' opacity='.9'/> 
                 </svg></div>""")
         ).add_to(_map)
 
