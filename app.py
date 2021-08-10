@@ -57,7 +57,7 @@ def temp():
         <style>
 
             .chart-wrap {
-                --chart-width:400px;
+                --chart-width:380px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
                 --bar-thickness:30px;
