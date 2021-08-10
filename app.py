@@ -47,6 +47,7 @@ def temp():
 
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
+            tooltip=[df["latitude"][i],df["longitude"][i]],
             icon=folium.DivIcon(html=f"""
                 <div>
                     <svg>
