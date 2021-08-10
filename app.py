@@ -133,6 +133,7 @@ def temp():
                 </svg></div>""")
         ).add_to(_map)
 
+
     folium.LayerControl().add_to(_map)
 
     return _map._repr_html_()
