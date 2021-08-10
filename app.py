@@ -87,7 +87,7 @@ def temp():
         
             .chart-wrap .bar::after{
                 content:attr(data-name);
-                margin-left:100%;
+                margin-left:50%;
                 padding:10px;
                 display:inline-block;
                 white-space:nowrap;
