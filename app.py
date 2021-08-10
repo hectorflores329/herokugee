@@ -94,7 +94,7 @@ def temp():
             }
 
             .grid{
-                margin-top:-150px;
+                margin-top:-250px;
             }
         </style>
 
