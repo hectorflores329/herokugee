@@ -31,9 +31,9 @@ def temp():
         locations.append((lat, lon, nomCom))
 
     if (periodo == "Simbologia2001"):
-        ubicacion = [-33.35, -70.5167]
+        ubicacion = [-33.2990800, -70.3686900]
     else:
-        ubicacion = [locations[0][0], locations[0][1]]
+        ubicacion = [-33.2990800, -70.3686900]
     
     _map = folium.Map(
         location=ubicacion,
