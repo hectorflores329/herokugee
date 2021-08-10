@@ -31,9 +31,9 @@ def temp():
         locations.append((lat, lon, nomCom))
 
     if (periodo == "Simbologia2001"):
-        ubicacion = [-33.4090800, -70.5086900]
+        ubicacion = [-33.3890800, -70.5086900]
     else:
-        ubicacion = [-33.4090800, -70.5086900]
+        ubicacion = [-33.3890800, -70.5086900]
     
     _map = folium.Map(
         location=ubicacion,
@@ -50,7 +50,7 @@ def temp():
             tooltip=df["Parcela_ID"][i],
             icon=folium.DivIcon(html=f"""
                 <div>
-                    <p style='color:""" + df[periodo][i] + """; font-size:75px;'>•</p>
+                    <p style='color:""" + df[periodo][i] + """; font-size:80px;'>•</p>
                 </div>""")
         ).add_to(_map)
 
