@@ -125,19 +125,19 @@ def temp():
 
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color="#FF0000", radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
 
-        if(i == 1000):
+        if(i <= 1000):
             grupo = fg
 
-        elif(i == 2000):
+        elif(i >= 1001) and (i <= 2000):
             grupo = fg2
 
-        elif(i == 3000):
+        elif(i >= 2001) and (i <= 3000):
             grupo = fg3
         
-        elif(i == 4000):
+        elif(i >= 3001) and (i <= 4000):
             grupo = fg5
         
-        elif(i == 5000):
+        elif(i >= 4001):
             grupo = fg5
         
         else:
