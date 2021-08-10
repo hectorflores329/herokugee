@@ -49,7 +49,9 @@ def temp():
             location=[df["latitude"][i],df["longitude"][i]],
             icon=folium.DivIcon(html=f"""
                 <div>
-                    <p>sdfsd</p>
+                    <svg>
+                        <circle cx='30' cy='30' r='10' fill='#FF0000' opacity='1'/> 
+                    </svg>
                 </div>""")
         ).add_to(_map)
 
