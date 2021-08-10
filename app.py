@@ -123,8 +123,10 @@ def temp():
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
             popup=popup,
-            tooltip="Comuna: " + str(df["NOM_COMUNA"][i]) + "<br>" + 
-            "<strong>Temperatura actual: </strong>" + str(round(float((df["2020_12"][i])), 1)) + "°",
+            tooltip="<strong>Comuna: </strong>" + str(df["NOM_COMUNA"][i]) + "<br>" + 
+            "<strong>Temperatura actual: </strong>" + str(round(float((df["2020_12"][i])), 1)) + "°" + 
+            "<strong>Latitud: </strong>" + str(df["latitude"][i]) + "<br>" +
+            "<strong>Longitud: </strong>" + str(df["longitude"][i]) + "<br>",
             icon=folium.DivIcon(html=f"""
                 <div><svg>
                     <circle cx='30' cy='30' r='10' fill='""" + df["Simbología"][i] + """' opacity='1'/> 
