@@ -9,8 +9,6 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
-    periodo = "Simbologia2001"
-    
     try:
         periodo = request.args.get("p")
         periodo = periodo
@@ -52,7 +50,7 @@ def temp():
             icon=folium.DivIcon(html=f"""
                 <div>
                     <svg>
-                        <circle cx='30' cy='30' r='10' fill='""" + df[periodo][i] + """' opacity='1'/> 
+                        <circle cx='30' cy='30' r='10' fill='transparent' opacity='1'/> 
                     </svg>
                 </div>""")
         ).add_to(_map)
