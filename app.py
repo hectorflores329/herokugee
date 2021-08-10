@@ -20,7 +20,7 @@ def temp():
     else:
         puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
 
-    df = pd.read_csv(puntos, nrows=1000)
+    df = pd.read_csv(puntos, nrows=10)
 
     df = df[df["COMUNA"] == comuna]
 
