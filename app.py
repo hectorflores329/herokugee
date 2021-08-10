@@ -10,7 +10,7 @@ app = Flask(__name__)
 def temp():
 
     try:
-        periodo = request.args.get("p")
+        periodo = request.args.get("periodo")
         periodo = periodo
     except:
         periodo = 0
