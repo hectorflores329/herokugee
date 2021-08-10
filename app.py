@@ -159,6 +159,10 @@ def temp():
 
     
     _map.add_child(fg)
+    _map.add_child(fg2)
+    _map.add_child(fg3)
+    _map.add_child(fg4)
+    _map.add_child(fg5)
 
     folium.LayerControl().add_to(_map)
 
