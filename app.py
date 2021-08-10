@@ -94,7 +94,7 @@ def temp():
             }
 
             .grid{
-                margin-top:-250px;
+                margin-top:-230px;
             }
         </style>
 
@@ -121,7 +121,7 @@ def temp():
         </div>
 
         """
-        iframe = folium.IFrame(html=html, width=450, height=350)
+        iframe = folium.IFrame(html=html, width=450, height=300)
 
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color="#FF0000", radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
 
