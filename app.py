@@ -125,7 +125,7 @@ def temp():
             popup=popup,
             tooltip="<strong>Comuna: </strong>" + str(df["NOM_COMUNA"][i]) + "<br>" + 
             "<strong>Temperatura actual: </strong>" + str(round(float((df["2020_12"][i])), 1)) + "°" + 
-            "<strong>Latitud: </strong>" + str(df["latitude"][i]) + "<br>" +
+            "<br><strong>Latitud: </strong>" + str(df["latitude"][i]) + "<br>" +
             "<strong>Longitud: </strong>" + str(df["longitude"][i]) + "<br>",
             icon=folium.DivIcon(html=f"""
                 <div><svg>
