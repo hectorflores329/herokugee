@@ -9,6 +9,8 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
+    periodo = "Simbologia2001"
+    
     try:
         periodo = request.args.get("p")
         periodo = periodo
