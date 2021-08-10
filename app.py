@@ -60,7 +60,7 @@ def temp():
                 --chart-width:400px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
-                --bar-thickness:15px;
+                --bar-thickness:30px;
                 --bar-rounded: 3px;
                 --bar-spacing:3px;
                 font-family:sans-serif;
@@ -96,7 +96,9 @@ def temp():
         </style>
 
         <div class="chart-wrap horizontal">
-            <div class="title">""" + df["NOM_COMUNA"][i] + """</div>
+            <div class="title">TEMPERATURA 2000 - 2020</div>
+            <div class="title"><strong>REGIÓN: </strong>""" + df["NOM_REGION"][i] + """</div>
+            <div class="title"><strong>COMUNA: </strong>""" + df["NOM_COMUNA"][i] + """</div>
             <br>
             <div class="grid">
                 <div class='bar' style='--bar-value:""" + str(df["2020_01"][i]) + """%;' data-name='"""+ str(round(float(df["2020_01"][i]), 1)) + """' title='"""+ str(round(float(df["2020_01"][i]), 1)) + """'></div>
