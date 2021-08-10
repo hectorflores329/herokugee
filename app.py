@@ -31,7 +31,7 @@ def temp():
         locations.append((lat, lon, nomCom))
 
     if (periodo == "Simbologia2001"):
-        ubicacion = [-33.467890412071654, -70.66557950912359]
+        ubicacion = [-33.30840784104671, -70.54133057959058]
     else:
         ubicacion = [locations[0][0], locations[0][1]]
     
@@ -47,7 +47,6 @@ def temp():
 
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
-            tooltip=[df["latitude"][i],df["longitude"][i]],
             icon=folium.DivIcon(html=f"""
                 <div>
                     <svg>
