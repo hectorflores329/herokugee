@@ -57,7 +57,7 @@ def temp():
         <style>
 
             .chart-wrap {
-                --chart-width:400px;
+                --chart-width:350px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
                 --bar-thickness:30px;
@@ -115,7 +115,7 @@ def temp():
         </div>
 
         """
-        iframe = folium.IFrame(html=html, width=350, height=350)
+        iframe = folium.IFrame(html=html, width=450, height=350)
 
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color="#FF0000", radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
 
