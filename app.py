@@ -94,7 +94,7 @@ def temp():
             }
 
             .grid{
-                margin-top:-15px;
+                margin-top:-50px;
             }
         </style>
 
@@ -129,7 +129,7 @@ def temp():
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
             popup=popup,
-            tooltip="<strong>Parcela ID:: </strong>" + str(df["Parcela_ID"][i]) + "<br>" + 
+            tooltip="<strong>Parcela ID: </strong>" + str(df["Parcela_ID"][i]) + "<br>" + 
             "<strong>Temperatura actual: </strong>" + str(round(float((df["2020_12"][i])), 1)) + "°" + 
             "<br><strong>Latitud: </strong>" + str(df["latitude"][i]) + "<br>" +
             "<strong>Longitud: </strong>" + str(df["longitude"][i]) + "<br>",
