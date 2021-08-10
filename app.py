@@ -93,7 +93,7 @@ def temp():
                 white-space:nowrap;
             }
 
-            grid{
+            .grid{
                 margin-top:-15px;
             }
         </style>
