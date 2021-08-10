@@ -20,7 +20,7 @@ def temp():
     else:
         puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
 
-    df = pd.read_csv(puntos)
+    df = pd.read_csv(puntos, nrows=1000)
 
     df = df[df["COMUNA"] == comuna]
 
@@ -44,13 +44,7 @@ def temp():
         location=ubicacion,
         zoom_start=11,
     )
-
-    fg = folium.FeatureGroup(name="Puntos")
-    fg2 = folium.FeatureGroup(name="Puntos 2")
-    fg3 = folium.FeatureGroup(name="Puntos 3")
-    fg4 = folium.FeatureGroup(name="Puntos 4")
-    fg5 = folium.FeatureGroup(name="Puntos 5")
-
+    
     for i, index in df.iterrows():
         html="""
         
@@ -125,24 +119,6 @@ def temp():
 
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color="#FF0000", radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
 
-        if(i <= 1000):
-            grupo = fg
-
-        elif(i >= 1001) and (i <= 2000):
-            grupo = fg2
-
-        elif(i >= 2001) and (i <= 3000):
-            grupo = fg3
-        
-        elif(i >= 3001) and (i <= 4000):
-            grupo = fg5
-        
-        elif(i >= 4001):
-            grupo = fg5
-        
-        else:
-            grupo = fg
-
         popup = folium.Popup(iframe, max_width=2650)
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
@@ -155,14 +131,7 @@ def temp():
                 <div><svg>
                     <circle cx='30' cy='30' r='10' fill='""" + df["Simbología"][i] + """' opacity='1'/> 
                 </svg></div>""")
-        ).add_to(grupo)
-
-    
-    _map.add_child(fg)
-    _map.add_child(fg2)
-    _map.add_child(fg3)
-    _map.add_child(fg4)
-    _map.add_child(fg5)
+        ).add_to(_map)
 
     folium.LayerControl().add_to(_map)
 
