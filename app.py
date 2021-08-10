@@ -139,6 +139,9 @@ def temp():
                 </svg></div>""")
         ).add_to(_map)
 
+    fg = folium.FeatureGroup(name="Puntos")
+    _map.add_child(fg)
+
     folium.LayerControl().add_to(_map)
 
     return _map._repr_html_()
