@@ -48,9 +48,9 @@ def temp():
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
             icon=folium.DivIcon(html=f"""
-                <div><svg>
-                    <circle cx='30' cy='30' r='10' fill='""" + df["Simbologia2020"][i] + """' opacity='1'/> 
-                </svg></div>""")
+                <div>
+                    <p>sdfsd</p>
+                </div>""")
         ).add_to(_map)
 
 
