@@ -57,7 +57,7 @@ def temp():
         <style>
 
             .chart-wrap {
-                --chart-width:250px;
+                --chart-width:500px;
                 --grid-color:#aaa;
                 --bar-color:#F16335;
                 --bar-thickness:30px;
@@ -87,7 +87,7 @@ def temp():
         
             .chart-wrap .bar::after{
                 content:attr(data-name);
-                margin-left:50%;
+                margin-left:0%;
                 padding:10px;
                 display:inline-block;
                 white-space:nowrap;
