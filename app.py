@@ -31,7 +31,7 @@ def temp():
         locations.append((lat, lon, nomCom))
 
     if (periodo == "Simbologia2001"):
-        ubicacion = [-33.30840784104671, -70.54133057959058]
+        ubicacion = [-33.35, -70.5167]
     else:
         ubicacion = [locations[0][0], locations[0][1]]
     
