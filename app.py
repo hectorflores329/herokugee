@@ -13,7 +13,7 @@ def temp():
         periodo = request.args.get("p")
         periodo = periodo
     except:
-        comuna = 0
+        periodo = 0
 
     puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/c13115.csv"
 
@@ -30,7 +30,7 @@ def temp():
         fLon = float(lon)
         locations.append((lat, lon, nomCom))
 
-    if (comuna == 0):
+    if (periodo == 0):
         ubicacion = [-33.467890412071654, -70.66557950912359]
     else:
         ubicacion = [locations[0][0], locations[0][1]]
