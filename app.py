@@ -9,13 +9,11 @@ app = Flask(__name__)
 @app.route('/')
 def temp():
 
-    periodo = 0
-    
     try:
-        periodo = request.args.get("periodo")
+        periodo = request.args.get("p")
         periodo = periodo
     except:
-        periodo = 0
+        periodo = "Simbologia2001"
 
     puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/c13115.csv"
 
@@ -32,7 +30,7 @@ def temp():
         fLon = float(lon)
         locations.append((lat, lon, nomCom))
 
-    if (periodo == 0):
+    if (periodo == "Simbologia2001"):
         ubicacion = [-33.467890412071654, -70.66557950912359]
     else:
         ubicacion = [locations[0][0], locations[0][1]]
