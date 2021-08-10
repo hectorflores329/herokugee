@@ -46,6 +46,10 @@ def temp():
     )
 
     fg = folium.FeatureGroup(name="Puntos")
+    fg2 = folium.FeatureGroup(name="Puntos 2")
+    fg3 = folium.FeatureGroup(name="Puntos 3")
+    fg4 = folium.FeatureGroup(name="Puntos 4")
+    fg5 = folium.FeatureGroup(name="Puntos 5")
 
     for i, index in df.iterrows():
         html="""
@@ -121,7 +125,23 @@ def temp():
 
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color="#FF0000", radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
 
-        grupo = fg
+        if(i == 1000):
+            grupo = fg
+
+        elif(i == 2000):
+            grupo = fg2
+
+        elif(i == 3000):
+            grupo = fg3
+        
+        elif(i == 4000):
+            grupo = fg5
+        
+        elif(i == 5000):
+            grupo = fg5
+        
+        else:
+            grupo = fg
 
         popup = folium.Popup(iframe, max_width=2650)
         folium.Marker(
