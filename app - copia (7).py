@@ -15,9 +15,14 @@ def temp():
     except:
         comuna = 0
 
-    puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/c13115.csv"
+    if (comuna == 0):
+        puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/13101.csv"
+    else:
+        puntos = "http://ide.dataintelligence-group.com/mapasdi/temperatura/" + str(comuna) + ".csv"
 
-    df = pd.read_csv(puntos)
+    df = pd.read_csv(puntos, nrows=1000)
+
+    df = df[df["COMUNA"] == comuna]
 
     latitude = df["latitude"].tolist()
     longitude = df["longitude"].tolist()
