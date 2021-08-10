@@ -121,6 +121,8 @@ def temp():
 
         # folium.CircleMarker(location=[df["latitude"][i],df["longitude"][i]], fill_color="#FF0000", radius=8, tooltip=df["NOM_COMUNA"][i], popup=folium.Popup(iframe)).add_to(_map)
 
+        grupo = fg
+
         popup = folium.Popup(iframe, max_width=2650)
         folium.Marker(
             location=[df["latitude"][i],df["longitude"][i]],
@@ -133,7 +135,7 @@ def temp():
                 <div><svg>
                     <circle cx='30' cy='30' r='10' fill='""" + df["Simbología"][i] + """' opacity='1'/> 
                 </svg></div>""")
-        ).add_to(fg)
+        ).add_to(grupo)
 
     
     _map.add_child(fg)
