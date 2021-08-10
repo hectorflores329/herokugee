@@ -50,7 +50,7 @@ def temp():
             icon=folium.DivIcon(html=f"""
                 <div>
                     <svg>
-                        <circle cx='30' cy='30' r='10' fill='#FF0000' opacity='1'/> 
+                        <circle cx='30' cy='30' r='10' fill='""" + df["Simbologia2020"][i] + """' opacity='1'/> 
                     </svg>
                 </div>""")
         ).add_to(_map)
