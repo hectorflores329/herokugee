@@ -50,7 +50,7 @@ def temp():
             tooltip=df["Parcela_ID"][i],
             icon=folium.DivIcon(html=f"""
                 <div>
-                    <p style='color:""" + df[periodo][i] + """; font-size:30px;'>•</p>
+                    <p style='color:""" + df[periodo][i] + """; font-size:80px;'>•</p>
                 </div>""")
         ).add_to(_map)
 
