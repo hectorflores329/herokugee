@@ -96,7 +96,8 @@ def temp():
         </style>
 
         <div class="chart-wrap horizontal">
-            <div class="title">TEMPERATURA 2000 - 2020</div>
+            <div class="title"><strong><center>TEMPERATURA 2000 - 2020</center><strong></div>
+            <br>
             <div class="title"><strong>REGIÓN: </strong>""" + df["NOM_REGION"][i] + """</div>
             <div class="title"><strong>COMUNA: </strong>""" + df["NOM_COMUNA"][i] + """</div>
             <br>
