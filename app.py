@@ -45,12 +45,8 @@ def temp():
         zoom_start=11,
     )
 
-    texto1 = "2020"
-    valor1 = "35"
+    fg = folium.FeatureGroup(name="Puntos")
 
-    texto2 = "2021111"
-    valor2 = "90"
-    
     for i, index in df.iterrows():
         html="""
         
@@ -137,9 +133,9 @@ def temp():
                 <div><svg>
                     <circle cx='30' cy='30' r='10' fill='""" + df["Simbología"][i] + """' opacity='1'/> 
                 </svg></div>""")
-        ).add_to(_map)
+        ).add_to(fg)
 
-    fg = folium.FeatureGroup(name="Puntos")
+    
     _map.add_child(fg)
 
     folium.LayerControl().add_to(_map)
